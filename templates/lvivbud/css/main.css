@@ -1,10 +1,9 @@
-header {
-  color: green; }
-
-footer {
-  color: yellow; }
+/*
+@import "header", "footer";
 
 div {
-  color: blue; }
+	color: blue;
+	//color: yellow;
+}*/
 
-/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5jc3MiLCJzb3VyY2VzIjpbIm1haW4uc2NzcyIsImhlYWRlci5zY3NzIiwiZm9vdGVyLnNjc3MiXSwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcImhlYWRlclwiLCBcImZvb3RlclwiO1xyXG5cclxuZGl2IHtcclxuXHRjb2xvcjogYmx1ZTtcclxuXHQvL2NvbG9yOiB5ZWxsb3c7XHJcbn0iLCJoZWFkZXIge1xyXG5cdGNvbG9yOiBncmVlbjtcclxufSIsImZvb3RlciB7XHJcblx0Y29sb3I6IHllbGxvdztcclxufSJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUNBQSxBQUFBLE1BQU0sQ0FBQztFQUNOLEtBQUssRUFBRSxLQUFLLEdBQ1o7O0FDRkQsQUFBQSxNQUFNLENBQUM7RUFDTixLQUFLLEVBQUUsTUFBTSxHQUNiOztBRkFELEFBQUEsR0FBRyxDQUFDO0VBQ0gsS0FBSyxFQUFFLElBQUksR0FFWCJ9 */
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5jc3MiLCJzb3VyY2VzIjpbIm1haW4uc2NzcyJdLCJzb3VyY2VzQ29udGVudCI6WyIvKlxyXG5AaW1wb3J0IFwiaGVhZGVyXCIsIFwiZm9vdGVyXCI7XHJcblxyXG5kaXYge1xyXG5cdGNvbG9yOiBibHVlO1xyXG5cdC8vY29sb3I6IHllbGxvdztcclxufSovXHJcblxyXG4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7OztHQU1HIn0= */
