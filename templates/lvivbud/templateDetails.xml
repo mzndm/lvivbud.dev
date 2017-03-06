@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.6.5" type="template" client="site">
+	<name>lvivbud</name>
+	<version>1.0</version>
+	<creationDate>13/01/2017</creationDate>
+	<authorEmail>anonim@gmail.com</authorEmail>
+	<copyright>Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.</copyright>
+	<description>TPL_LVIVBUD_XML_DESCRIPTION</description>
+	<files>
+
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>img</folder>
+		<folder>js</folder>
+		<folder>language</folder>
+
+	</files>
+	<positions>
+		<position>language</position>
+		<position>header_phone</position>
+		<position>header_logo</position>
+		<position>header_menu</position>
+		
+		<position>breadcrumbs</position>
+		<position>first_screen</position>
+		<position>services</position>
+
+
+
+		<position>footer</position>
+	</positions>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.tpl_lvivbud.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_lvivbud.sys.ini</language>
+		<language tag="en-GB">ru-RU/ru-RU.tpl_lvivbud.ini</language>
+		<language tag="en-GB">ru-RU/ru-RU.tpl_lvivbud.sys.ini</language>
+	</languages>
+
+	<config>
+	</config>
+</extension>

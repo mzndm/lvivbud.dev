@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.site {
+	font-family: 'Ubuntu', sans-serif;
+}
+.header_phone_menu {
+	background: url(../img/background_header.png);
+	height: 2em;
+	line-height: 2em;	
+}
+.header_phones {
+	color: #fff;
+	float: right;
+	margin-bottom: 0;
+}
+.header_phones:before {
+    content: "";
+    background: url(../img/phone.png);
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 6px;
+    left: 8em;
+}
+
+.header_logo a {
+	display: block;
+	padding: 9px 0;
+}
+/*header menu*/
+.navbar .menunavnav li:first-child {
+	display: none;
+}
+.header_menu .navbar {
+    float: right;
+    /*height: 60px;*/
+    margin: 0;
+    border: 0;
+}
+.header_menu .navbar-default {
+	background: none;
+}
+.header_menu .container-fluid, 
+.header_menu .navbar-collapse {
+	padding: 0;
+}
+.header_menu .navbar-default .navbar-nav > li > a {
+	font-size: 16px;
+	color: #000;
+	border-right: 1px solid #e8e8e8;
+	border-bottom: 1px solid #e8e8e8;
+	padding: 20px 17px;
+}
+.header_menu .navbar-default .navbar-nav > li:nth-child(2) > a {
+	border-left: 1px solid #e8e8e8;
+}
+/*.parent .nav-child {*/
+	/*display: none;*/
+/*}*/
+/*.deeper.parent:hover .nav-child {*/
+    /*display: block;*/
+/*}*/
+
+/* start first screen */
+.first_screen {
+	width: 100%;
+	background-image: url(../img/first_screen_bg.png);
+	background-size: cover;
+	color: #fff;
+
+	height: 670px; /*delete*/
+}
+.headline {
+    /*font-size: 3vh;*/
+    font-size: 2.6em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 1.2em;
+}
+/*.advantage_wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}*/
+.advantage_wrapper {
+    margin-top: 27vh;
+}
+.advantage_item {
+    text-align: center;
+}
+.advantage_item span:before {
+	content: "";
+	/*position: absolute;*/
+	background: #62fcc3;
+/*	top: 0;
+    left: 60px;*/
+    height: 3px;
+    width: 30px;
+    margin: 0 auto 0.2em;
+    display: block;	
+}
+.advantage_item span{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 3.5em;
+}
+.advantage_item p{
+	font: italic 1.4em 'Open Sans light';
+}
+.go_bottom {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    font-size: 2vh;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-top: 15vh;
+}
+.go_bottom a {
+    transform: rotate(90deg);
+    display: block;
+    color: #fff;
+    font-size: 3vh;
+    font-family: monospace;
+}
+.go_bottom a:hover,
+.go_bottom a:focus {
+    color: #fff;
+    text-decoration: none;
+}
+/* end first screen */
+
+
+
+
+
+
+* {
+    /*outline: 1px dotted red;*/
+}
