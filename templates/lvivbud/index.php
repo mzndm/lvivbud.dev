@@ -122,11 +122,16 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/boo
 		<div class="row">
 			<jdoc:include type="modules" name="first_screen" style="none" />
 		</div>
-
-		<div class="row">
-			<jdoc:include type="modules" name="services" style="none" />
+	</div>
+	<div class="container">
+		<div class="row col-md-12">
+			<jdoc:include type="modules" name="services" style="xhtml" />
 		</div>
-
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<jdoc:include type="modules" name="realized" style="xhtml" />
+		</div>
 	</div>
 	<!-- End Content -->
 

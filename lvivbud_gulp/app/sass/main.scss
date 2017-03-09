@@ -6,3 +6,31 @@ div {
 	//color: yellow;
 }*/
 
+@import "first_screen", "services";
+
+
+@mixin before_line($before_line) {
+
+}
+
+.h2 {
+  margin-top: 80px;
+  font-size: 1.5em;
+  line-height: 3em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+
+  &:before {
+    content: "";
+    background: #62fcc3;
+    height: 3px;
+    width: 30px;
+    margin: 0 auto 0.2em;
+    display: block;
+  }
+}
+
+.moduletable {
+  min-height: 20em;
+}

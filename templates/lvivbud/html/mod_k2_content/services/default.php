@@ -18,9 +18,9 @@ defined('_JEXEC') or die;
 	<?php endif; ?>
 
 	<?php if(count($items)): ?>
-  <div class="services_wrapper">
+  <div class="services__wrapper">
     <?php foreach ($items as $key=>$item):	?>
-    <div class="servises_item">
+    <div class="services__item">
 <!--    <div class="servises_item --><?php //echo ($key%2) ? "odd" : "even"; if(count($items)==$key+1) echo ' lastItem'; ?><!--">-->
 
       <!-- Plugins: BeforeDisplay -->
@@ -50,8 +50,10 @@ defined('_JEXEC') or die;
 
 
       <?php if($params->get('itemTitle')): ?>
-      <a class="moduleItemTitle" href="<?php echo $item->link; ?>"><?php echo $item->title; ?></a>
-      <?php endif; ?>
+		<div class="services__item--title">
+      		<a class="services__item--link moduleItemTitle" href="<?php echo $item->link; ?>"><?php echo $item->title; ?></a>
+		</div>
+	  <?php endif; ?>
 
       <?php if($params->get('itemAuthor')): ?>
       <div class="moduleItemAuthor">
@@ -186,7 +188,14 @@ defined('_JEXEC') or die;
       <div class="clr"></div>
     </div>
     <?php endforeach; ?>
-    <div class="clearList"></div>
+    <div class="services__item services__item--done clearList">
+		<div class="services__item--title">
+			<a class="services__item--link moduleItemTitle" href="/vykonani-roboty">
+				<span class="icon_done"></span>
+				<p>Переглянути виконані роботи</p>
+			</a>
+		</div>
+	</div>
   </div>
   <?php endif; ?>
 

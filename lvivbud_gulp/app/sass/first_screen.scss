@@ -1,0 +1,75 @@
+
+/* start first screen */
+.first_screen {
+  width: 100%;
+  background-image: url(../img/first_screen_bg.png);
+  background-size: cover;
+  color: #fff;
+  height: 670px; /*delete*/
+}
+.headline {
+  /*font-size: 3vh;*/
+  font-size: 2.6em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 1.2em;
+}
+/*.advantage_wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}*/
+.advantage_wrapper {
+  margin-top: 27vh;
+}
+.advantage_item {
+  text-align: center;
+
+  span {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 3.5em;
+
+      &:before {
+      content: "";
+      /*position: absolute;*/
+      background: #62fcc3;
+      /*	top: 0;
+          left: 60px;*/
+      height: 3px;
+      width: 30px;
+      margin: 0 auto 0.2em;
+      display: block;
+    }
+  }
+  p{
+    font: italic 1.4em 'Open Sans light';
+  }
+}
+
+.go_bottom {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  color: #fff;
+  font-size: 2vh;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-top: 15vh;
+
+  a {
+    transform: rotate(90deg);
+    display: block;
+    color: #fff;
+    font-size: 3vh;
+    font-family: monospace;
+
+    &:hover, &:focus {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+/* end first screen */
