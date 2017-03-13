@@ -13,6 +13,12 @@ div {
 
 }
 
+h1, .h1 {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 .h2 {
   margin-top: 80px;
   font-size: 1.5em;
@@ -33,4 +39,95 @@ div {
 
 .moduletable {
   min-height: 20em;
+}
+
+.realized_projects {
+  background: #f7f7f7;
+}
+
+/* slider */
+.partners_slider {
+  width: 90%;
+  margin: 3em auto;
+
+  .slick-slide {
+
+    img {
+      margin: 0 auto;
+      max-width: 100%;
+    }
+  }
+
+  .slick-dots {
+    top: 6em;
+
+    li {
+      button {
+
+       &:before {
+         content: "■";
+         font-family: Arial;
+         font-size: 20px;
+         color: #c6c6c6;
+         opacity: 1;
+       }
+      }
+    }
+    .slick-active {
+      button {
+        &:before {
+          color: #42b988;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .slick-next{
+    color: #c6c6c6;
+      &:before {
+          content: '>';
+          font-family: monospace;
+          color: #c6c6c6;
+          font-size: 40px;
+      }
+  }
+  .slick-prev {
+    @extend .slick-next;
+    &:before {
+      content: '<';
+    }
+  }
+
+}
+
+
+
+
+
+/* bottom text module */
+.bottom_text {
+  position: relative;
+  //background-color: #f7f7f7;
+
+  .readmore {
+    //position: absolute;
+    //bottom:0;
+    color: #42b988;
+    font-weight: bold;
+    text-decoration: underline;
+    //background: #f7f7f7;
+    //width: 100%;
+  }
+}
+
+.bottom_text_wrapper {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+
+  &.show {
+    height: auto;
+
+  }
+
 }

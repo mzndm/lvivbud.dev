@@ -44,12 +44,16 @@ $sitename = $app->get('sitename');
 <!-- 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
  -->
+
 <?php 
 // Add Stylesheets
+
+$doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/bootstrap.css');
+$doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/slick.css');
+$doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/slick-theme.css');
+
 $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/style.css');
 $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/main.css');
-$doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/bootstrap.css');
-
 ?>
 
 </head>
@@ -124,13 +128,30 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/boo
 		</div>
 	</div>
 	<div class="container">
-		<div class="row col-md-12">
-			<jdoc:include type="modules" name="services" style="xhtml" />
+		<div class="row">
+			<div class="col-md-12">
+				<jdoc:include type="modules" name="services" style="xhtml" />
+			</div>
 		</div>
 	</div>
 	<div class="container-fluid">
 		<div class="row">
 			<jdoc:include type="modules" name="realized" style="xhtml" />
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<jdoc:include type="modules" name="partners" style="xhtml" />
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<jdoc:include type="modules" name="bottom" style="xhtml" />
+			</div>
 		</div>
 	</div>
 	<!-- End Content -->
@@ -148,10 +169,9 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/boo
 <?php 
 // Add Scripts
 $doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/bootstrap.js');
+$doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/slick.js');
 $doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/common.js');
-
 ?>
-
 <!-- 	<script type="text/javascript">
 		(function($){
 			$(document).ready(function(){
@@ -177,22 +197,7 @@ $doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/common.j
 			e.stopPropagation();
 		});
 	</script>-->
-	<script>
-jQuery(document).ready(function($) {
- 
- function menu(){
- $('.navbar .parent').addClass('dropdown');
- $('.navbar .parent > a').addClass('dropdown-toggle');
- $('.navbar .parent > a').attr('data-toggle', 'dropdown');
- $('.navbar .parent > a').attr('role', 'button');
- $('.navbar .parent > a').attr('aria-haspopup', 'true');
- $('.navbar .parent > a').append(' ', '<span class="caret"></span>');
- $('.navbar .parent > ul').addClass('dropdown-menu');
- }
- menu();
- 
-});
-</script>
+
 
 </body>
 </html>
