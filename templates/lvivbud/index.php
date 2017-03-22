@@ -162,7 +162,24 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 
 	<!-- Footer -->
 	<footer>
-		<jdoc:include type="modules" name="footer" style="none" />
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6">
+					<jdoc:include type="modules" name="footer_left" style="xhtml" />
+				</div>
+				<div class="col-md-6">
+					<jdoc:include type="modules" name="footer_right" style="xhtml" />
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<jdoc:include type="modules" name="footer" style="none" />
+				</div>
+			</div>
+		</div>
 	</footer>
 
 

@@ -32,8 +32,8 @@
 		<position>partners</position>
 		<position>bottom</position>
 
-
-
+		<position>footer_left</position>
+		<position>footer_right</position>
 		<position>footer</position>
 	</positions>
 
