@@ -16,7 +16,7 @@ class Chronoforms extends \GCore\Libs\Controller {
 			if(\GCore\C::get('GSITE_PLATFORM') == 'wordpress'){
 				//echo '<p class="chrono_credits"><strong>Powered by ChronoForms - ChronoEngine.com</strong></p>';
 			}else{
-				echo '<p class="chrono_credits"><a href="http://www.chronoengine.com" target="_blank">Powered by ChronoForms - ChronoEngine.com</a></p>';
+				echo '';
 			}
 		}
 	}
