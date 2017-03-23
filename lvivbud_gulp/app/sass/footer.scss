@@ -1,10 +1,14 @@
+$green: #42b988;
+
 footer {
 	border-top: 1px solid #dddddd;
 
+	iframe {
+		width: 100%;
+		height: 330px;
+	}
 }
-
 .contact {
-
 	&__title {
 		margin-top: 40px;
 
@@ -25,5 +29,69 @@ footer {
 		&--phone {
 
 		}
+		a {
+			color: #000;
+			text-decoration: none;
+			&:hover {
+				color: #42b988;
+			}
+		}
+	}
+	&__form {
+		margin-top: 2em;
+		height: 150px;
+
+		&--left {
+			padding-left: 0;
+		}
+		&--right {
+			@extend .contact__form--left;
+			padding-right: 0;
+		}
+		&--fields {
+			display: block;
+			width: 100%;
+			padding: 6px 12px;
+			font-size: 14px;
+			color: #555;
+			border: 1px solid #a2a2a2;
+			border-radius: 5px;
+			margin-bottom: 14px;
+		}
+		&--input {
+			height: 28px;
+			&:focus {
+				outline: none;
+				border: 1px solid $green;
+			}
+		}
+		&--textarea {
+			height: 112px;
+			&:focus {
+				@extend .contact__form--input:focus;
+			}
+		}
+		&--submit {
+			height: 30px;
+			width: 125px;
+			float: right;
+			color: white;
+			background-color: $green;
+			font-weight: bold;
+			text-align: center;
+			padding-top: 4px;
+			cursor: pointer;
+			border: 1px solid $green;
+			input {
+				display: none;
+			}
+		}
+	}
+}
+.footer_bottom {
+	@extend .header_phone_menu;
+	&--text {
+		text-align: center;
+		color: #555;
 	}
 }

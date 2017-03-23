@@ -1,14 +1,8 @@
-/*
-@import "header", "footer";
 
-div {
-	color: blue;
-	//color: yellow;
-}*/
-
-@import "first_screen", "services";
+@import "header", "first_screen", "services";
 @import "footer";
 
+$green: #42b988;
 
 @mixin before_line($before_line) {
 

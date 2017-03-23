@@ -1,3 +1,61 @@
-header {
-	color: green;
+
+
+.header_phone_menu {
+	background: url(../img/background_header.png);
+	height: 2em;
+	line-height: 2em;
+}
+.header_phones {
+	color: #fff;
+	float: right;
+	margin-bottom: 0;
+	&:before {
+		content: "";
+		background: url(../img/phone.png);
+		width: 16px;
+		height: 16px;
+		position: absolute;
+		top: 6px;
+		left: 8em;
+	}
+}
+.header_logo a {
+	display: block;
+	padding: 9px 0;
+}
+
+/*header menu*/
+.navbar .menunavnav li:first-child {
+	display: none;
+}
+.header_menu {
+	.navbar {
+		float: right;
+		margin: 0;
+		border: 0;
+	}
+	.navbar-default {
+		background: none;
+	}
+	.container-fluid, .navbar-collapse {
+		padding: 0;
+	}
+	.navbar-default {
+		.navbar-nav {
+			> li {
+				> a {
+					font-size: 16px;
+					color: #000;
+					border-right: 1px solid #e8e8e8;
+					border-bottom: 1px solid #e8e8e8;
+					padding: 20px 17px;
+				}
+				&:nth-child(2)  {
+					>a {
+						border-left: 1px solid #e8e8e8;
+					}
+				}
+			}
+		}
+	}
 }

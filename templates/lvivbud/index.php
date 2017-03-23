@@ -71,20 +71,20 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 	<!-- Header -->
 
 	<div class="container-fluid">
-		<div class="row header_phone_menu">				
+		<div class="row header_phone_menu">
 			<div class="col-md-1">
 				<jdoc:include type="modules" name="language" style="none" />
 			</div>
 
-			<div class="col-md-8">				
+			<div class="col-md-8">
 			</div>
 
 			<div class="col-md-3">
 				<jdoc:include type="modules" name="header_phone" style="none" />
-			</div>			
+			</div>
 		</div>
 
-		<div class="row">				
+		<div class="row">
 			<div class="col-md-2 header_logo">
 				<!-- <jdoc:include type="modules" name="header_logo" style="none" /> -->
 				<a href="/"><img src="/templates/lvivbud/img/logo_header.png"></a>
@@ -134,12 +134,12 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row">
 			<jdoc:include type="modules" name="realized" style="xhtml" />
 		</div>
 	</div>
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<jdoc:include type="modules" name="partners" style="xhtml" />
@@ -147,7 +147,7 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 		</div>
 	</div>
 
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<jdoc:include type="modules" name="bottom" style="xhtml" />
@@ -161,8 +161,9 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 
 
 	<!-- Footer -->
-	<footer>
-		<div class="container-fluid">
+
+	<footer class="container-fluid">
+		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
 					<jdoc:include type="modules" name="footer_left" style="xhtml" />
@@ -172,15 +173,14 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 				</div>
 			</div>
 		</div>
-
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-12">
-					<jdoc:include type="modules" name="footer" style="none" />
-				</div>
+	</footer>
+	<div class="container-fluid footer_bottom">
+		<div class="row">
+			<div class="col-md-12">
+				<jdoc:include type="modules" name="footer_bottom" style="none" />
 			</div>
 		</div>
-	</footer>
+	</div>
 
 
 <?php 

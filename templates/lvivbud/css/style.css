@@ -4,57 +4,16 @@
 .site {
 	font-family: 'Ubuntu', sans-serif;
 }
-.header_phone_menu {
-	background: url(../img/background_header.png);
-	height: 2em;
-	line-height: 2em;	
-}
-.header_phones {
-	color: #fff;
-	float: right;
-	margin-bottom: 0;
-}
-.header_phones:before {
-    content: "";
-    background: url(../img/phone.png);
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    top: 6px;
-    left: 8em;
-}
 
-.header_logo a {
-	display: block;
-	padding: 9px 0;
-}
-/*header menu*/
-.navbar .menunavnav li:first-child {
-	display: none;
-}
-.header_menu .navbar {
-    float: right;
-    /*height: 60px;*/
-    margin: 0;
-    border: 0;
-}
-.header_menu .navbar-default {
-	background: none;
-}
-.header_menu .container-fluid, 
-.header_menu .navbar-collapse {
-	padding: 0;
-}
-.header_menu .navbar-default .navbar-nav > li > a {
-	font-size: 16px;
-	color: #000;
-	border-right: 1px solid #e8e8e8;
-	border-bottom: 1px solid #e8e8e8;
-	padding: 20px 17px;
-}
-.header_menu .navbar-default .navbar-nav > li:nth-child(2) > a {
-	border-left: 1px solid #e8e8e8;
-}
+
+
+
+
+
+
+/*.header_menu .navbar-default .navbar-nav > li:nth-child(2) > a {*/
+	/*border-left: 1px solid #e8e8e8;*/
+/*}*/
 /*.parent .nav-child {*/
 	/*display: none;*/
 /*}*/
@@ -62,12 +21,6 @@
     /*display: block;*/
 /*}*/
 
-
-
-
-
-
-
 * {
-    /*outline: 1px dotted red;*/
+	/*outline: 1px dotted red;*/
 }
