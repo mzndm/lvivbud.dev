@@ -1,5 +1,17 @@
+$green: #42b988;
 
-
+.lang-inline {
+	li {
+		a {
+			color: #ffffff;
+		}
+	}
+	.lang-active {
+		a {
+			color: $green;
+		}
+	}
+}
 .header_phone_menu {
 	background: url(../img/background_header.png);
 	height: 2em;
@@ -9,14 +21,9 @@
 	color: #fff;
 	float: right;
 	margin-bottom: 0;
-	&:before {
-		content: "";
-		background: url(../img/phone.png);
-		width: 16px;
-		height: 16px;
-		position: absolute;
-		top: 6px;
-		left: 8em;
+	padding-right: 15px;
+	img {
+		margin-right: 10px;
 	}
 }
 .header_logo a {
@@ -25,6 +32,8 @@
 }
 
 /*header menu*/
+
+
 .navbar .menunavnav li:first-child {
 	display: none;
 }
@@ -43,7 +52,8 @@
 	.navbar-default {
 		.navbar-nav {
 			> li {
-				> a {
+				//display: inline-block;
+				> a, span {
 					font-size: 16px;
 					color: #000;
 					border-right: 1px solid #e8e8e8;
@@ -57,5 +67,14 @@
 				}
 			}
 		}
+	}
+}
+.nav-header {
+	display: block;
+	height: 61px;
+	cursor: pointer;
+	&:after {
+		content: '▼';
+		transform: rotate(90deg);
 	}
 }

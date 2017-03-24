@@ -8,6 +8,12 @@ $green: #42b988;
 
 }
 
+p {
+  font-family: Ubuntu, sans-serif;
+  color:  #383838;
+  font-size: 1em;
+  line-height: 1.5;
+}
 h1, .h1 {
   font-size: 1.2em;
   text-transform: uppercase;
@@ -15,12 +21,13 @@ h1, .h1 {
 }
 
 .h2 {
-  margin-top: 80px;
-  font-size: 1.5em;
-  line-height: 3em;
+  margin-top: 70px;
+  font-size: 1.875em;
+  line-height: 2.733;
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
+  color: #383838;
 
   &:before {
     content: "";
@@ -33,17 +40,21 @@ h1, .h1 {
 }
 
 h3, .h3 {
-  font-size: 1.2em;
+  color: #191919;
+  font-size: 1.125em;
   text-transform: uppercase;
   font-weight: bold;
+  margin: 50px 0 25px;
 }
 
 .moduletable {
-  min-height: 20em;
+  min-height: 240px;
 }
-
-.realized_projects {
+.background_gray {
   background: #f7f7f7;
+}
+.realized_projects {
+  //background: #f7f7f7;
 }
 
 /* slider */

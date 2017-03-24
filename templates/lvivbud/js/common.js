@@ -14,6 +14,11 @@ jQuery(document).ready(function($) {
     menu();
 
 
+    $('.nav').click(function () {
+        $('.dropdown').toggleClass('open');
+    });
+
+
     // slider
 
      $('#partners').slick({
@@ -39,23 +44,7 @@ jQuery(document).ready(function($) {
          // ]
      });
 
-/*
-    $("#partners").owlCarousel({
 
-        loop : true,
-        autoplay:true,
-        autoplayTimeout: 4000,
-        navigation : true,
-        pagination : true,
-        smartSpeed : 1000,
-        autoplayHoverPause:true,
-        dots : true,
-        items : 6    //10 изображений на 1000px
-      /!*  itemsDesktop : [1000,5], //5 изображений на ширину между 1000px и 901px
-        itemsDesktopSmall : [900,3], // 3 изображения между 900px и 601px
-        itemsTablet: [600,2], //2 изображения между 600 и 0;
-        itemsMobile : false*!/
-    });*/
 
     $('.readmore').click(function() {
         $('.bottom_text_wrapper').toggleClass('show');

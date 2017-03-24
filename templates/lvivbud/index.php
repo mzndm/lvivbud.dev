@@ -72,44 +72,44 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 
 	<div class="container-fluid">
 		<div class="row header_phone_menu">
-			<div class="col-md-1">
-				<jdoc:include type="modules" name="language" style="none" />
-			</div>
-
-			<div class="col-md-8">
-			</div>
-
-			<div class="col-md-3">
-				<jdoc:include type="modules" name="header_phone" style="none" />
+			<div class="container">
+				<div class="col-md-4">
+					<jdoc:include type="modules" name="language" style="none" />
+				</div>
+				<div class="col-md-8">
+					<jdoc:include type="modules" name="header_phone" style="none" />
+				</div>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="col-md-2 header_logo">
-				<!-- <jdoc:include type="modules" name="header_logo" style="none" /> -->
-				<a href="/"><img src="/templates/lvivbud/img/logo_header.png"></a>
-			</div>
+			<div class="container">
+				<div class="col-md-2 header_logo">
+					<!-- <jdoc:include type="modules" name="header_logo" style="none" /> -->
+					<a href="/"><img src="/templates/lvivbud/img/logo_header.png"></a>
+				</div>
 
-			<div class="col-md-10 header_menu">
+				<div class="col-md-10 header_menu">
 
-				<nav class="navbar navbar-default">
-					<div class="container-fluid">						   
-					    <div class="navbar-header">
-					    	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header_menu" aria-expanded="false">
-						        <span class="sr-only">Toggle navigation</span>
-						        <span class="icon-bar"></span>
-						        <span class="icon-bar"></span>
-						        <span class="icon-bar"></span>
-					      </button>
-					    </div>
-					      
-					    <div class="collapse navbar-collapse" id="header_menu">
-					    	<jdoc:include type="modules" name="header_menu" style="none" />			    	
+					<nav class="navbar navbar-default">
+						<div class="container-fluid">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header_menu" aria-expanded="false">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							</div>
+
+							<div class="collapse navbar-collapse" id="header_menu">
+								<jdoc:include type="modules" name="header_menu" style="none" />
+							</div>
 						</div>
-					</div>
-				</nav>
+					</nav>
 
-			</div>			
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -127,6 +127,7 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 			<jdoc:include type="modules" name="first_screen" style="none" />
 		</div>
 	</div>
+<!--	ddddddd-->
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -134,9 +135,11 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 			</div>
 		</div>
 	</div>
-	<div class="container">
-		<div class="row">
-			<jdoc:include type="modules" name="realized" style="xhtml" />
+	<div class="container-fluid background_gray">
+		<div class="container">
+			<div class="row">
+				<jdoc:include type="modules" name="realized" style="xhtml" />
+			</div>
 		</div>
 	</div>
 	<div class="container">
@@ -147,13 +150,17 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<jdoc:include type="modules" name="bottom" style="xhtml" />
+	<div class="container-fluid background_gray">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<jdoc:include type="modules" name="bottom" style="xhtml" />
+				</div>
 			</div>
 		</div>
 	</div>
+
+
 	<!-- End Content -->
 
 
@@ -189,32 +196,6 @@ $doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/bootstra
 $doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/slick.js');
 $doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/common.js');
 ?>
-<!-- 	<script type="text/javascript">
-		(function($){
-			$(document).ready(function(){
-// dropdown
-				if ($('.parent').children('ul').length > 0) {
-					$('.parent').addClass('dropdown');
-					$('.parent > a').addClass('dropdown-toggle');
-					$('.parent > a').attr('data-toggle', 'dropdown');
-					$('.parent > a').append('<b class="caret"></b>');
-					$('.parent > ul').addClass('dropdown-menu');
-				}
-			});
-		})(jQuery);
-	</script> -->
-<!--	<script type="text/javascript">
-		$('.dropdown input').click(function(e) {
-			e.stopPropagation();
-		});
-	</script>
-	<script type="text/javascript">
-		$('.dropdown-menu .dropdown-submenu a[data-toggle="dropdown-submenu"]').click(function (e)
-		{
-			e.stopPropagation();
-		});
-	</script>-->
-
 
 </body>
 </html>
