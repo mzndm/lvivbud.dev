@@ -6,28 +6,32 @@
  * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
-
+	// realised Mazun Dmytro
 defined('_JEXEC') or die;
 
 $app             = JFactory::getApplication();
 $doc             = JFactory::getDocument();
-$user            = JFactory::getUser();
+//$user            = JFactory::getUser();
 $this->language  = $doc->language;
-$this->direction = $doc->direction;
+//$this->direction = $doc->direction;
 
 // Output as HTML5
 $doc->setHtml5(true);
 
+$menu   = $app->getMenu();
+$active = $menu->getActive();
+$class  = $active->alias . " pageid-" . $active->id;
+
 // Getting params from template
-$params = $app->getTemplate(true)->params;
+//$params = $app->getTemplate(true)->params;
 
 // Detecting Active Variables
-$option   = $app->input->getCmd('option', '');
-$view     = $app->input->getCmd('view', '');
-$layout   = $app->input->getCmd('layout', '');
-$task     = $app->input->getCmd('task', '');
-$itemid   = $app->input->getCmd('Itemid', '');
-$sitename = $app->get('sitename');
+//$option   = $app->input->getCmd('option', '');
+//$view     = $app->input->getCmd('view', '');
+//$layout   = $app->input->getCmd('layout', '');
+//$task     = $app->input->getCmd('task', '');
+//$itemid   = $app->input->getCmd('Itemid', '');
+//$sitename = $app->get('sitename');
 
 ?>
 
@@ -58,19 +62,12 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 
 </head>
 
-<body class="site <?php echo $option
-	. ' view-' . $view
-	. ($layout ? ' layout-' . $layout : ' no-layout')
-	. ($task ? ' task-' . $task : ' no-task')
-	. ($itemid ? ' itemid-' . $itemid : '')
-	. ($params->get('fluidContainer') ? ' fluid' : '');
-	echo ($this->direction == 'rtl' ? ' rtl' : '');
-?>">
+<body class="site <?php echo $class; ?>">
 	<!-- Body -->
 
 	<!-- Header -->
 
-	<div class="container-fluid">
+	<div class="container-fluid header">
 		<div class="row header_phone_menu">
 			<div class="container">
 				<div class="col-md-4">
@@ -114,9 +111,11 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 	</div>
 
 	<!-- Begin Breadcrumbs -->
-	<div class="container-fluid">
-		<div class="row">
-			<jdoc:include type="modules" name="breadcrumbs" style="none" />
+	<div class="container-fluid breadcrumbs_wrapper">
+		<div class="container">
+			<div class="row">
+				<jdoc:include type="modules" name="breadcrumbs" style="none" />
+			</div>
 		</div>
 	</div>
 	<!-- End Breadcrumbs -->
@@ -126,8 +125,15 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 		<div class="row">
 			<jdoc:include type="modules" name="first_screen" style="none" />
 		</div>
+    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<jdoc:include type="modules" name="content" style="xhtml" />
+			</div>
+		</div>
 	</div>
-<!--	ddddddd-->
+
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -195,7 +201,10 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 $doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/bootstrap.js');
 $doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/slick.js');
 $doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/common.js');
+//$doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/map.js');
 ?>
+
+<!--	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsYaYJAkTYvpetZz0NmrR4K6ZAk-NjLG4" async defer></script>-->
 
 </body>
 </html>

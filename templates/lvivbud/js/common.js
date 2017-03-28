@@ -14,12 +14,12 @@ jQuery(document).ready(function($) {
     menu();
 
 
-    $('.nav').click(function () {
+    $('.services_dropdown').click(function () {
         $('.dropdown').toggleClass('open');
     });
 
 
-    // slider
+// slider
 
      $('#partners').slick({
          dots: true,
@@ -48,7 +48,6 @@ jQuery(document).ready(function($) {
 
     $('.readmore').click(function() {
         $('.bottom_text_wrapper').toggleClass('show');
-        // $('.bottom_text_wrapper').removeClass('show');
     });
 
 

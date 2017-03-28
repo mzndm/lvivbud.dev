@@ -9,12 +9,15 @@ footer {
 	}
 }
 .contact {
+    .h2 {
+      text-align: left;
+      line-height: 1.733;
+    }
 	&__title {
-		margin-top: 40px;
 
 		&:before {
 			content: "";
-			background: #42b988;
+			background: $green;
 			height: 3px;
 			width: 20px;
 			margin-bottom: 0.5em;
@@ -33,7 +36,7 @@ footer {
 			color: #000;
 			text-decoration: none;
 			&:hover {
-				color: #42b988;
+				color: $green;
 			}
 		}
 	}
@@ -88,6 +91,7 @@ footer {
 		}
 	}
 }
+
 .footer_bottom {
 	@extend .header_phone_menu;
 	&--text {

@@ -1,4 +1,7 @@
 $green: #42b988;
+.header {
+	border-bottom: 1px solid #e8e8e8;
+}
 
 .lang-inline {
 	li {
@@ -69,12 +72,23 @@ $green: #42b988;
 		}
 	}
 }
-.nav-header {
+.separator {
 	display: block;
 	height: 61px;
 	cursor: pointer;
 	&:after {
 		content: '▼';
-		transform: rotate(90deg);
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 10px;
+        margin-left: 5px;
 	}
+}
+.open {
+  .separator {
+    &:after {
+      content: '▼';
+      transform: rotate(180deg);
+    }
+  }
 }
