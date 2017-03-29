@@ -133,6 +133,13 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 			</div>
 		</div>
 	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<jdoc:include type="component" />
+			</div>
+		</div>
+	</div>
 
 	<div class="container">
 		<div class="row">

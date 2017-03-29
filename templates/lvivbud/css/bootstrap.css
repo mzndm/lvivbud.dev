@@ -1406,12 +1406,12 @@ a.bg-warning:focus {
 a.bg-danger:hover,
 a.bg-danger:focus {
   background-color: #e4b9b9;
-}
+}/*
 .page-header {
   padding-bottom: 9px;
   margin: 40px 0 20px;
   border-bottom: 1px solid #eee;
-}
+}*/
 ul,
 ol {
   margin-top: 0;

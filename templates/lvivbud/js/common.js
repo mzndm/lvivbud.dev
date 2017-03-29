@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
     });
 
 
-// slider
+//  =====================   sliders   =================================
 
      $('#partners').slick({
          dots: true,
@@ -44,7 +44,30 @@ jQuery(document).ready(function($) {
          // ]
      });
 
+    $('#company').slick({
+        dots: true,
+        arrows: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autopalay: true,
+        autoplaySpeed: 2000
 
+        // responsive: [
+        //     {
+        //         breakpoint: 1024,
+        //         settings: {
+        //             slidesToShow: 3,
+        //             slidesToScroll: 3,
+        //             infinite: true,
+        //             dots: true
+        //         }
+        //     }
+        // ]
+    });
+
+//  =====================  end sliders   =================================
 
     $('.readmore').click(function() {
         $('.bottom_text_wrapper').toggleClass('show');
