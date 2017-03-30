@@ -13,7 +13,7 @@
     font-size: 2.25em;
     text-align: center;
     text-transform: uppercase;
-    font-weight: bold;
+    font-family: Ubuntu-Bold;
     margin:7em auto 1.2em;
     color: #fff;
   }
@@ -52,7 +52,6 @@
 }
 
 .go_bottom {
-  //position: absolute;
   display: block;
   width: 100%;
   overflow: hidden;
@@ -60,7 +59,7 @@
   color: #fff;
   font-size: 1.2em;
   text-transform: uppercase;
-  font-weight: bold;
+  font-family: Ubuntu-Bold;
   margin-top: 9em;
 
   a {

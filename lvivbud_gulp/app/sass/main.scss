@@ -2,6 +2,23 @@
 @import "header", "first_screen", "services";
 @import "footer";
 
+@font-face {
+  font-family: "Ubuntu-Bold";
+  src: url("../fonts/Ubuntu/Ubuntu-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu/Ubuntu-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.site {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 $green: #42b988;
 
 @mixin before_line($before_line) {
@@ -15,16 +32,16 @@ p {
   line-height: 1.5;
 }
 h1, .h1 {
+  font-family: Ubuntu-Bold;
   font-size: 1.2em;
   text-transform: uppercase;
-  font-weight: bold;
 }
 
 h2, .h2 {
+  font-family: Ubuntu-Bold;
   margin-top: 70px;
   font-size: 1.875em;
   line-height: 2.733;
-  font-weight: bold;
   text-transform: uppercase;
   text-align: center;
   color: #383838;
@@ -44,7 +61,7 @@ h3, .h3 {
   color: #191919;
   font-size: 1.125em;
   text-transform: uppercase;
-  font-weight: bold;
+  font-family: Ubuntu-Bold;
   margin: 50px 0 25px;
 }
 .page-header {
@@ -188,14 +205,10 @@ h3, .h3 {
   //background-color: #f7f7f7;
 
   .readmore {
-    //position: absolute;
-    //bottom:0;
     color: #42b988;
-    font-weight: bold;
+    font-family: Ubuntu-Bold;
     text-decoration: underline;
     cursor: pointer;
-    //background: #f7f7f7;
-    //width: 100%;
   }
 }
 
@@ -221,7 +234,7 @@ h3, .h3 {
     display: block;
     margin-top: 2em;
     &--title {
-      font-weight: bold;
+      font-family: Ubuntu-Bold;
       margin-right: 10px;
       line-height: 2em;
     }
@@ -270,6 +283,28 @@ h3, .h3 {
         background-color: $green;
         margin: 0 auto 5px;
       }
+    }
+  }
+}
+
+// partners page =================================
+
+.partners_tiles {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 2em;
+  &__item {
+    display: flex;
+    border: 1px solid #e7e7e7;
+    width: 23%;
+    margin-bottom: 2em;
+    padding: 4em 0;
+    align-items: center;
+    justify-content: center;
+    &--img {
+      max-width: 90%;
     }
   }
 }
