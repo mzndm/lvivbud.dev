@@ -308,3 +308,70 @@ h3, .h3 {
     }
   }
 }
+
+// works =========================================
+.works_intro {
+  &__item {
+    border: 1px solid #e7e7e7;
+    &--img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      img {
+        width: 100%;
+      }
+    }
+    &--title {
+      display: block;
+      padding: 1em;
+      margin: 0;
+      border-bottom: 1px solid #e7e7e7;
+      &:hover {
+        color: $green;
+        text-decoration: none;
+      }
+    }
+    &--to_project {
+      display: block;
+      height: 3em;
+      font-size: 1em;
+      line-height: 3em;
+      color: #fff;
+      text-align: center;
+      background: url(../img/background_header.png);
+      &:hover {
+        background: url(../img/hover_bg.png);
+        color: #fff;
+      }
+    }
+  }
+}
+
+.extra_fields {
+  overflow: hidden;
+  &__group {
+    width: 50%;
+    float: left;
+    text-align: center;
+    padding: 1em;
+    border-bottom: 1px solid #e7e7e7;
+    &:nth-child(2n-1) {
+      display: none;
+    }
+    &:nth-child(2) {
+      border-right: 1px solid #e7e7e7;
+    }
+    &:nth-child(4) {
+      border-right: none;
+    }
+    &--label {
+      color: #a2a2a2;
+      font-size: 0.75em;
+    }
+    &--value {
+      @extend .h3;
+      margin: 0;
+    }
+  }
+}
+

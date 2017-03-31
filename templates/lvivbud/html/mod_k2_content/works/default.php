@@ -18,10 +18,10 @@ defined('_JEXEC') or die;
 	<?php endif; ?>
 
 	<?php if(count($items)): ?>
-  <ul>
+  <div class="works works_intro col-md-12">
     <?php foreach ($items as $key=>$item):	?>
-    <li class="<?php echo ($key%2) ? "odd" : "even"; if(count($items)==$key+1) echo ' lastItem'; ?>">
-
+    <div class="col-md-3 <?php echo ($key%2) ? "odd" : "even"; if(count($items)==$key+1) echo ' lastItem'; ?>">
+        <div class="works_intro__item">
       <!-- Plugins: BeforeDisplay -->
       <?php echo $item->event->BeforeDisplay; ?>
 
@@ -32,10 +32,6 @@ defined('_JEXEC') or die;
       <a class="k2Avatar moduleItemAuthorAvatar" rel="author" href="<?php echo $item->authorLink; ?>">
 				<img src="<?php echo $item->authorAvatar; ?>" alt="<?php echo K2HelperUtilities::cleanHtml($item->author); ?>" style="width:<?php echo $avatarWidth; ?>px;height:auto;" />
 			</a>
-      <?php endif; ?>
-
-      <?php if($params->get('itemTitle')): ?>
-      <a class="moduleItemTitle" href="<?php echo $item->link; ?>"><?php echo $item->title; ?></a>
       <?php endif; ?>
 
       <?php if($params->get('itemAuthor')): ?>
@@ -68,12 +64,17 @@ defined('_JEXEC') or die;
       <?php echo $item->event->K2BeforeDisplayContent; ?>
 
       <?php if($params->get('itemImage') || $params->get('itemIntroText')): ?>
+
+      <?php if($params->get('itemImage') && isset($item->image)): ?>
+          <a class="works_intro__item--img moduleItemImage" href="<?php echo $item->link; ?>" title="<?php echo JText::_('K2_CONTINUE_READING'); ?> &quot;<?php echo K2HelperUtilities::cleanHtml($item->title); ?>&quot;">
+              <img src="<?php echo $item->image; ?>" alt="<?php echo K2HelperUtilities::cleanHtml($item->title); ?>"/>
+          </a>
+      <?php endif; ?>
+      <div class="clr"></div>
+      <?php if($params->get('itemTitle')): ?>
+          <a class="works_intro__item--title h3 moduleItemTitle" href="<?php echo $item->link; ?>"><?php echo $item->title; ?></a>
+      <?php endif; ?>
       <div class="moduleItemIntrotext">
-	      <?php if($params->get('itemImage') && isset($item->image)): ?>
-	      <a class="moduleItemImage" href="<?php echo $item->link; ?>" title="<?php echo JText::_('K2_CONTINUE_READING'); ?> &quot;<?php echo K2HelperUtilities::cleanHtml($item->title); ?>&quot;">
-	      	<img src="<?php echo $item->image; ?>" alt="<?php echo K2HelperUtilities::cleanHtml($item->title); ?>"/>
-	      </a>
-	      <?php endif; ?>
 
       	<?php if($params->get('itemIntroText')): ?>
       	<?php echo $item->introtext; ?>
@@ -82,23 +83,23 @@ defined('_JEXEC') or die;
       <?php endif; ?>
 
       <?php if($params->get('itemExtraFields') && count($item->extra_fields)): ?>
-      <div class="moduleItemExtraFields">
-	      <b><?php echo JText::_('K2_ADDITIONAL_INFO'); ?></b>
-	      <ul>
+      <div class="works_intro__item__extra_fields extra_fields moduleItemExtraFields">
+<!--	      <b>--><?php //echo JText::_('K2_ADDITIONAL_INFO'); ?><!--</b>-->
+
 	        <?php foreach ($item->extra_fields as $extraField): ?>
 					<?php if($extraField->value != ''): ?>
-					<li class="type<?php echo ucfirst($extraField->type); ?> group<?php echo $extraField->group; ?>">
+					<div class="extra_fields__group type<?php echo ucfirst($extraField->type); ?> group<?php echo $extraField->group; ?>">
 						<?php if($extraField->type == 'header'): ?>
 						<h4 class="moduleItemExtraFieldsHeader"><?php echo $extraField->name; ?></h4>
 						<?php else: ?>
-						<span class="moduleItemExtraFieldsLabel"><?php echo $extraField->name; ?></span>
-						<span class="moduleItemExtraFieldsValue"><?php echo $extraField->value; ?></span>
+						<div class="extra_fields__group--label moduleItemExtraFieldsLabel"><?php echo $extraField->name; ?>:</div>
+						<div class="extra_fields__group--value moduleItemExtraFieldsValue"><?php echo $extraField->value; ?></div>
 						<?php endif; ?>
 						<div class="clr"></div>
-					</li>
+					</div>
 					<?php endif; ?>
 	        <?php endforeach; ?>
-	      </ul>
+
       </div>
       <?php endif; ?>
 
@@ -167,6 +168,9 @@ defined('_JEXEC') or die;
 				<?php echo JText::_('K2_READ'); ?> <?php echo $item->hits; ?> <?php echo JText::_('K2_TIMES'); ?>
 			</span>
 			<?php endif; ?>
+            <a class="works_intro__item--to_project moduleItemReadMore" href="<?php echo $item->link; ?>">
+                <?php echo JText::_('K2_TO_PROJECT'); ?>
+            </a>
 
 			<?php if($params->get('itemReadMore') && $item->fulltext): ?>
 			<a class="moduleItemReadMore" href="<?php echo $item->link; ?>">
@@ -179,12 +183,12 @@ defined('_JEXEC') or die;
 
       <!-- K2 Plugins: K2AfterDisplay -->
       <?php echo $item->event->K2AfterDisplay; ?>
-
+        </div>
       <div class="clr"></div>
-    </li>
+    </div>
     <?php endforeach; ?>
     <li class="clearList"></li>
-  </ul>
+  </div>
   <?php endif; ?>
 
 	<?php if($params->get('itemCustomLink')): ?>
