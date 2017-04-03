@@ -187,7 +187,7 @@ defined('_JEXEC') or die;
       <div class="clr"></div>
     </div>
     <?php endforeach; ?>
-    <li class="clearList"></li>
+    <div class="clearList"></div>
   </div>
   <?php endif; ?>
 
