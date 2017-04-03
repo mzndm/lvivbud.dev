@@ -1,0 +1,55 @@
+#tabYJK2slider,#k2Tab28{
+	visibility:hidden;
+}
+
+ul.simpleTabsNavigation li#tabYJK2slider a {
+    background-image: url(../images/Picture.png);
+}
+
+.YJK2slider_itemAttachments {margin-bottom:15px;display:block; clear:both;}
+.YJK2slider_itemAttachments a {border:1px solid silver;font-size:10px;padding:2px;background-color:#f0f0f0;color:#000;}
+.YJK2slider_itemAttachments a:hover {text-decoration:none;}
+#YJK2slider_itemAttachments {margin-top:15px;padding-top:10px;}
+#YJK2slider_itemAttachments label {margin-right:10px;font-weight:bold;width:170px;float:left;clear:left;}
+#YJK2slider_itemAttachments input {margin-right:10px;margin-bottom:10px;}
+#YJK2slider_itemAttachments input.linkTitle {width:200px;}
+#YJK2slider_itemAttachments textarea {width:200px;}
+#YJK2slider_itemAttachments a.YJK2slider_AttachmentBrowseServer { margin-right: 8px;}
+
+div#YJK2slider_addAttachments {
+    padding: 0 16px;
+}
+
+div#YJK2slider_addAttachment {
+    margin-top: 16px;
+}
+
+input#YJK2slider_addAttachmentButton {
+    background: none repeat scroll 0 0 #EEEEEE;
+    font-size: 14px;
+    font-weight: bold;
+}
+input#YJK2slider_addAttachmentButton:hover {
+    background: none repeat scroll 0 0 #FFFFF0;
+    cursor: pointer;
+}
+#YJK2slider_itemAttachments .removeb{
+	margin:3px 0 0 10px;
+}
+
+.YJK2sliderAdminlist_image{
+	width:100px;
+}
+
+.YJK2sliderAdminlist_title{
+	width:300px;
+}
+
+.YJK2sliderAdminlist_description{
+	width:300px;
+}
+
+.YJK2sliderAdminlist_action{
+	width:100px;
+}
+

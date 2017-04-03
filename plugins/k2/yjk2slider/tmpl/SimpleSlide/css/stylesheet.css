@@ -1,0 +1,155 @@
+/*======================================================================*\
+|| #################################################################### ||
+|| # Package - YJ K2 Image Slider								        ||
+|| # Copyright (C) 2010  Youjoomla.com. All Rights Reserved.            ||
+|| # license - PHP files are licensed under  GNU/GPL V2                 ||
+|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
+|| # bound by Proprietary License of Youjoomla.com                      ||
+|| # for more information visit http://www.youjoomla.com/license.html   ||
+|| # Redistribution and  modification of this software                  ||
+|| # is bounded by its licenses                                         ||
+|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
+|| #################################################################### ||
+\*======================================================================*/
+.SimpleSlide {
+	display:block;
+	overflow:hidden;
+	border:none;
+	padding:0px;
+	margin:0 auto 10px auto;
+	position:relative;
+	background:url(../images/ajax-loader.gif) no-repeat center 38%;
+}
+.SimpleSlide .slide {
+	display:block;
+	position:relative;
+	clear:both;
+	margin:0px auto 20px auto;
+	visibility:hidden;
+}
+.SimpleSlide .SimpleSlide_inner {
+	display:block;
+	position:relative;
+	margin:0px;
+}
+.SimpleSlide .SimpleSlide_slide {
+	display:block;
+	position:relative;
+	margin:0px;
+	padding:0;
+	overflow:hidden;
+}
+.SimpleSlide_slide a{
+	display:block;
+	width:100%;
+	max-width:100%;
+	overflow:hidden;
+	position:relative;
+	height:auto;
+}
+.SimpleSlide .SimpleSlide_slide img{
+	width:100%;
+	max-width:100%;
+	height:auto;
+}
+/* navigation*/
+.SimpleSlide .navContainer {
+	display:block;
+	position:relative;
+	clear:both;
+	text-align:left;
+	margin:0 auto 20px auto;
+	float:left;
+	padding:5px 0 0 0;
+	background:none;
+}
+.SimpleSlide .nav_inner {
+	display:block;
+	position:relative;
+	visibility:hidden;
+	display:block;
+	position:relative;
+	width:5000px;
+}
+.SimpleSlide .SimpleSlide_nav {
+	display:block;
+	position:relative;
+	overflow:hidden;
+	margin:0 0 0 1px;
+	height:70px;
+	padding:0;
+}
+
+.SimpleSlide .navContainer a.SimpleSlide_navLink {
+	margin:0px 11px 0px 0px;
+	width:115px;
+	height:62px;
+	overflow:hidden;
+	display:block;
+	position:relative;
+	float:left;
+	font-weight:bold;
+	background:#f6f6f6;
+	border:1px solid #e5e5e5;
+}
+.SimpleSlide .navContainer a.selected,
+.navContainer a.SimpleSlide_navLink:hover {
+	background:#121212;
+	border:1px solid #e6e6e6;
+}
+.SimpleSlide .navContainer a.SimpleSlide_navLink span.slide_img {
+	display:block;
+	width:105px;
+	height:52px;
+	float:left;
+	margin:5px;
+	clear:right;
+	overflow:hidden;
+}
+.SimpleSlide .navContainer a.SimpleSlide_navLink span.slide_img img {
+	width:105px!important;
+	height:52px!important;
+}
+.SimpleSlide .SimpleSlide_left,
+.SimpleSlide .SimpleSlide_right {
+	background:url(../images/navs.png) no-repeat left top;
+	display: block;
+	height:48px;
+	left:5px;
+	position: absolute;
+	top: 48%;
+	width:48px;
+	z-index: 200;
+}
+.SimpleSlide .SimpleSlide_right {
+	left:auto;
+	right:5px;
+	background-position:right bottom;
+}
+.SimpleSlide .SimpleSlide_intro {
+	display:block;
+	position:absolute;
+	left:0;
+	bottom:10px;
+	z-index:5000;
+	width:inherit;
+	height:auto;
+	padding:10px 0px;
+	background:url(../images/trans.png);
+}
+.SimpleSlide .SimpleSlide_title {
+	display:block;
+	overflow:hidden;
+	font-weight:bold;
+	font-size:130%;
+	color:#fff;
+	padding:0 0 10px 10px;
+	margin:0;
+}
+.SimpleSlide .SimpleSlide_desc {
+	display:block;
+	overflow:hidden;
+	padding:0 0 0 10px;
+	margin:0;
+	color:#efefef;
+}
