@@ -22,34 +22,45 @@ defined('_JEXEC') or die;
 <!-- Start K2 Item Layout -->
 <span id="startOfPageId<?php echo JRequest::getInt('id'); ?>"></span>
 
-<div id="k2Container" class="col-md-12 itemView<?php echo ($this->item->featured) ? ' itemIsFeatured' : ''; ?><?php if($this->item->params->get('pageclass_sfx')) echo ' '.$this->item->params->get('pageclass_sfx'); ?>">
+<div id="k2Container" class="work_item itemView<?php echo ($this->item->featured) ? ' itemIsFeatured' : ''; ?><?php if($this->item->params->get('pageclass_sfx')) echo ' '.$this->item->params->get('pageclass_sfx'); ?>">
+
+    <div class="work_item__navigation col-md-12">
+        <?php if($this->item->params->get('itemNavigation') && !JRequest::getCmd('print') && (isset($this->item->nextLink) || isset($this->item->previousLink))): ?>
+            <!-- Item navigation -->
+            <div class="navigation__button">
+                <?php if(isset($this->item->previousLink)): ?>
+                    <a class="navigation__button--previous" href="<?php echo $this->item->previousLink; ?>">
+                       <?php echo JText::_('K2_PREVIOUS_PROJECT'); ?>
+                    </a>
+                <?php endif; ?>
+
+                <?php if(isset($this->item->nextLink)): ?>
+                    <a class="navigation__button--next" href="<?php echo $this->item->nextLink; ?>">
+                        <?php echo JText::_('K2_NEXT_PROJECT'); ?>
+                    </a>
+                <?php endif; ?>
+
+            </div>
+        <?php endif; ?>
+    </div>
 
     <!-- Plugins: BeforeDisplay -->
     <?php echo $this->item->event->BeforeDisplay; ?>
 
     <!-- K2 Plugins: K2BeforeDisplay -->
     <?php echo $this->item->event->K2BeforeDisplay; ?>
-    <div class="col-md-4">
-
-    <div class="itemHeader">
-
-        <?php if($this->item->params->get('itemDateCreated')): ?>
-            <!-- Date created -->
-            <span class="itemDateCreated">
-			<?php echo JHTML::_('date', $this->item->created , JText::_('K2_DATE_FORMAT_LC2')); ?>
-		</span>
-        <?php endif; ?>
+    <div class="work_item__content work_description col-md-4">
 
         <?php if($this->item->params->get('itemTitle')): ?>
             <!-- Item title -->
-            <h2 class="itemTitle">
+            <div class="work_description__title h3">
                 <?php if(isset($this->item->editLink)): ?>
                     <!-- Item edit link -->
                     <span class="itemEditLink">
-				<a class="modal" rel="{handler:'iframe',size:{x:990,y:550}}" href="<?php echo $this->item->editLink; ?>">
-					<?php echo JText::_('K2_EDIT_ITEM'); ?>
-				</a>
-			</span>
+                        <a class="modal" rel="{handler:'iframe',size:{x:990,y:550}}" href="<?php echo $this->item->editLink; ?>">
+                            <?php echo JText::_('K2_EDIT_ITEM'); ?>
+                        </a>
+			        </span>
                 <?php endif; ?>
 
                 <?php echo $this->item->title; ?>
@@ -57,28 +68,14 @@ defined('_JEXEC') or die;
                 <?php if($this->item->params->get('itemFeaturedNotice') && $this->item->featured): ?>
                     <!-- Featured flag -->
                     <span>
-		  	<sup>
-		  		<?php echo JText::_('K2_FEATURED'); ?>
-		  	</sup>
-	  	</span>
+                        <sup>
+                            <?php echo JText::_('K2_FEATURED'); ?>
+                        </sup>
+                    </span>
                 <?php endif; ?>
 
-            </h2>
+            </div>
         <?php endif; ?>
-
-        <?php if($this->item->params->get('itemAuthor')): ?>
-            <!-- Item Author -->
-            <span class="itemAuthor">
-			<?php echo K2HelperUtilities::writtenBy($this->item->author->profile->gender); ?>&nbsp;
-                <?php if(empty($this->item->created_by_alias)): ?>
-                    <a rel="author" href="<?php echo $this->item->author->link; ?>"><?php echo $this->item->author->name; ?></a>
-                <?php else: ?>
-                    <?php echo $this->item->author->name; ?>
-                <?php endif; ?>
-		</span>
-        <?php endif; ?>
-
-    </div>
 
     <!-- Plugins: AfterDisplayTitle -->
     <?php echo $this->item->event->AfterDisplayTitle; ?>
@@ -195,8 +192,6 @@ defined('_JEXEC') or die;
         </div>
     <?php endif; ?>
 
-    <div class="itemBody">
-
         <!-- Plugins: BeforeDisplayContent -->
         <?php echo $this->item->event->BeforeDisplayContent; ?>
 
@@ -226,6 +221,29 @@ defined('_JEXEC') or die;
             </div>
         <?php endif; ?>
 
+        <div class="clr"></div>
+
+        <?php if($this->item->params->get('itemExtraFields') && count($this->item->extra_fields)): ?>
+            <!-- Item extra fields -->
+            <div class="work_description__extra_fields description_fields itemExtraFields">
+
+            <?php foreach ($this->item->extra_fields as $key=>$extraField): ?>
+                <?php if($extraField->value != ''): ?>
+                    <div class="description_fields__group <?php echo ($key%2) ? "odd" : "even"; ?> type<?php echo ucfirst($extraField->type); ?> group<?php echo $extraField->group; ?>">
+                        <?php if($extraField->type == 'header'): ?>
+                            <h4 class="itemExtraFieldsHeader"><?php echo $extraField->name; ?></h4>
+                        <?php else: ?>
+                            <div class="description_fields__group--label"><?php echo $extraField->name; ?>:</div>
+                            <div class="description_fields__group--value"><?php echo $extraField->value; ?></div>
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
+            <?php endforeach; ?>
+
+                <div class="clr"></div>
+            </div>
+        <?php endif; ?>
+
         <?php if(!empty($this->item->fulltext)): ?>
             <?php if($this->item->params->get('itemIntroText')): ?>
                 <!-- Item introtext -->
@@ -243,30 +261,6 @@ defined('_JEXEC') or die;
             <!-- Item text -->
             <div class="itemFullText">
                 <?php echo $this->item->introtext; ?>
-            </div>
-        <?php endif; ?>
-
-        <div class="clr"></div>
-
-        <?php if($this->item->params->get('itemExtraFields') && count($this->item->extra_fields)): ?>
-            <!-- Item extra fields -->
-            <div class="itemExtraFields">
-                <h3><?php echo JText::_('K2_ADDITIONAL_INFO'); ?></h3>
-                <ul>
-                    <?php foreach ($this->item->extra_fields as $key=>$extraField): ?>
-                        <?php if($extraField->value != ''): ?>
-                            <li class="<?php echo ($key%2) ? "odd" : "even"; ?> type<?php echo ucfirst($extraField->type); ?> group<?php echo $extraField->group; ?>">
-                                <?php if($extraField->type == 'header'): ?>
-                                    <h4 class="itemExtraFieldsHeader"><?php echo $extraField->name; ?></h4>
-                                <?php else: ?>
-                                    <span class="itemExtraFieldsLabel"><?php echo $extraField->name; ?>:</span>
-                                    <span class="itemExtraFieldsValue"><?php echo $extraField->value; ?></span>
-                                <?php endif; ?>
-                            </li>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-                </ul>
-                <div class="clr"></div>
             </div>
         <?php endif; ?>
 
@@ -297,10 +291,8 @@ defined('_JEXEC') or die;
         <div class="clr"></div>
     </div>
 
-    </div>
-
     <!-- K2 Plugins: K2AfterDisplayContent -->
-    <div class="col-md-8">
+    <div class="work_item__content work_slider col-md-8">
         <div class="slider_project">
             <?php echo $this->item->event->K2AfterDisplayContent; ?>
         </div>
@@ -554,25 +546,6 @@ defined('_JEXEC') or die;
         </div>
     <?php endif; ?>
 
-    <?php if($this->item->params->get('itemNavigation') && !JRequest::getCmd('print') && (isset($this->item->nextLink) || isset($this->item->previousLink))): ?>
-        <!-- Item navigation -->
-        <div class="itemNavigation">
-            <span class="itemNavigationTitle"><?php echo JText::_('K2_MORE_IN_THIS_CATEGORY'); ?></span>
-
-            <?php if(isset($this->item->previousLink)): ?>
-                <a class="itemPrevious" href="<?php echo $this->item->previousLink; ?>">
-                    &laquo; <?php echo $this->item->previousTitle; ?>
-                </a>
-            <?php endif; ?>
-
-            <?php if(isset($this->item->nextLink)): ?>
-                <a class="itemNext" href="<?php echo $this->item->nextLink; ?>">
-                    <?php echo $this->item->nextTitle; ?> &raquo;
-                </a>
-            <?php endif; ?>
-
-        </div>
-    <?php endif; ?>
 
     <!-- Plugins: AfterDisplay -->
     <?php echo $this->item->event->AfterDisplay; ?>
@@ -681,13 +654,6 @@ defined('_JEXEC') or die;
         </div>
     <?php endif; ?>
 
-    <?php if(!JRequest::getCmd('print')): ?>
-        <div class="itemBackToTop">
-            <a class="k2Anchor" href="<?php echo $this->item->link; ?>#startOfPageId<?php echo JRequest::getInt('id'); ?>">
-                <?php echo JText::_('K2_BACK_TO_TOP'); ?>
-            </a>
-        </div>
-    <?php endif; ?>
 
     <div class="clr"></div>
 </div>

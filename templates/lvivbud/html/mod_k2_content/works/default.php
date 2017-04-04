@@ -18,7 +18,7 @@ defined('_JEXEC') or die;
 	<?php endif; ?>
 
 	<?php if(count($items)): ?>
-  <div class="works works_intro col-md-12">
+  <div class="works works_intro">
     <?php foreach ($items as $key=>$item):	?>
     <div class="col-md-3 <?php echo ($key%2) ? "odd" : "even"; if(count($items)==$key+1) echo ' lastItem'; ?>">
         <div class="works_intro__item">
