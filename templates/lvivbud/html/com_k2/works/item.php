@@ -49,11 +49,12 @@ defined('_JEXEC') or die;
 
     <!-- K2 Plugins: K2BeforeDisplay -->
     <?php echo $this->item->event->K2BeforeDisplay; ?>
-    <div class="work_item__content work_description col-md-4">
+    <div class="col-md-4">
+    <div class="work_item__content work_description">
 
         <?php if($this->item->params->get('itemTitle')): ?>
             <!-- Item title -->
-            <div class="work_description__title h3">
+            <div class="work_description__title h4">
                 <?php if(isset($this->item->editLink)): ?>
                     <!-- Item edit link -->
                     <span class="itemEditLink">
@@ -259,7 +260,7 @@ defined('_JEXEC') or die;
             <?php endif; ?>
         <?php else: ?>
             <!-- Item text -->
-            <div class="itemFullText">
+            <div class="work_description__text">
                 <?php echo $this->item->introtext; ?>
             </div>
         <?php endif; ?>
@@ -290,15 +291,16 @@ defined('_JEXEC') or die;
 
         <div class="clr"></div>
     </div>
-
-    <!-- K2 Plugins: K2AfterDisplayContent -->
-    <div class="work_item__content work_slider col-md-8">
-        <div class="slider_project">
-            <?php echo $this->item->event->K2AfterDisplayContent; ?>
-        </div>
-        <div class="clr"></div>
     </div>
-
+    <!-- K2 Plugins: K2AfterDisplayContent -->
+    <div class="col-md-8">
+        <div class="work_item__content work_slider">
+            <div class="slider_project">
+                <?php echo $this->item->event->K2AfterDisplayContent; ?>
+            </div>
+            <div class="clr"></div>
+        </div>
+    </div>
 
     <?php if($this->item->params->get('itemTwitterButton',1) || $this->item->params->get('itemFacebookButton',1) || $this->item->params->get('itemGooglePlusOneButton',1)): ?>
         <!-- Social sharing -->
