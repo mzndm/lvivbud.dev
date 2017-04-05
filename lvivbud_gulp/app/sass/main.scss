@@ -337,6 +337,8 @@ h4, .h4 {
   }
 }
 .works_intro {
+  overflow: hidden;
+  margin-bottom: 2em;
   &__item {
     border: 1px solid $grey;
     &--img {
