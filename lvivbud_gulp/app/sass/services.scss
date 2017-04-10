@@ -44,4 +44,40 @@
   }
 }
 
+.service_page {
+  border: $border;
+  border-radius: 5px;
+  margin-top: 50px;
+}
+.service_menu {
+  &__item {
+    border-bottom: $border;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  &__link {
+    display: block;
+    font-family: Ubuntu-Bold;
+    color:  #383838;
+    font-size: 1em;
+    line-height: 2em;
+    padding: 0 1em;
+    &:hover {
+      text-decoration: none;
+      color: $green;
+    }
+  }
+}
+.service_content {
+  padding: 0 1em;
+  margin-bottom: 50px;
+  &__title{
+    border-bottom: $border;
+    .h2 {
+      margin-top: 0;
+      text-align: left;
+    }
+  }
+}
 

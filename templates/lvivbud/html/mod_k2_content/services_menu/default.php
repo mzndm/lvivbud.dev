@@ -11,16 +11,16 @@
 defined('_JEXEC') or die;
 ?>
 
-<div id="k2ModuleBox<?php echo $module->id; ?>" class="k2ItemsBlock<?php if($params->get('moduleclass_sfx')) echo ' '.$params->get('moduleclass_sfx'); ?>">
+<div id="k2ModuleBox<?php echo $module->id; ?>" class="col-md-3 k2ItemsBlock<?php if($params->get('moduleclass_sfx')) echo ' '.$params->get('moduleclass_sfx'); ?>">
 
 	<?php if($params->get('itemPreText')): ?>
 	<p class="modulePretext"><?php echo $params->get('itemPreText'); ?></p>
 	<?php endif; ?>
 
 	<?php if(count($items)): ?>
-  <ul>
+  <div class="service_page service_menu">
     <?php foreach ($items as $key=>$item):	?>
-    <li class="<?php echo ($key%2) ? "odd" : "even"; if(count($items)==$key+1) echo ' lastItem'; ?>">
+    <div class="service_menu__item <?php echo ($key%2) ? "odd" : "even"; if(count($items)==$key+1) echo ' lastItem'; ?>">
 
       <!-- Plugins: BeforeDisplay -->
       <?php echo $item->event->BeforeDisplay; ?>
@@ -35,7 +35,7 @@ defined('_JEXEC') or die;
       <?php endif; ?>
 
       <?php if($params->get('itemTitle')): ?>
-      <a class="moduleItemTitle" href="<?php echo $item->link; ?>"><?php echo $item->title; ?></a>
+      <a class="service_menu__link moduleItemTitle" href="<?php echo $item->link; ?>"><?php echo $item->title; ?></a>
       <?php endif; ?>
 
       <?php if($params->get('itemAuthor')): ?>
@@ -181,10 +181,10 @@ defined('_JEXEC') or die;
       <?php echo $item->event->K2AfterDisplay; ?>
 
       <div class="clr"></div>
-    </li>
+    </div>
     <?php endforeach; ?>
-    <li class="clearList"></li>
-  </ul>
+<!--    <li class="clearList"></li>-->
+  </div>
   <?php endif; ?>
 
 	<?php if($params->get('itemCustomLink')): ?>

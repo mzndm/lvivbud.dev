@@ -18,7 +18,7 @@
 	padding:0px;
 	/*margin:0 auto 10px auto;*/
 	position:relative;
-	background:url(../images/ajax-loader.gif) no-repeat center 38%;
+	/*background:url(../images/ajax-loader.gif) no-repeat center 38%;*/
 }
 .SimpleSlide .slide {
 	display:block;
@@ -28,7 +28,7 @@
 	visibility:hidden;
 }
 .SimpleSlide .SimpleSlide_inner {
-	display:block;
+	display:none;
 	position:relative;
 	margin:0px;
 }
@@ -127,6 +127,9 @@
 	top: 48%;
 	width:48px;
 	z-index: 200;
+	margin-top: 8em;
+	zoom: 0.6;
+
 }
 .SimpleSlide .SimpleSlide_right {
 	left:auto;

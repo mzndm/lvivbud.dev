@@ -29,7 +29,8 @@
 		
 		<position>breadcrumbs</position>
 		<position>first_screen</position>
-		<position>content</position>
+		<position>before_content</position>
+		<position>after_content</position>
 		<position>article</position>
 		<position>services</position>
 		<position>realized</position>

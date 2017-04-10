@@ -22,15 +22,16 @@ defined('_JEXEC') or die;
 <!-- Start K2 Item Layout -->
 <span id="startOfPageId<?php echo JRequest::getInt('id'); ?>"></span>
 
-<div id="k2Container" class="itemView<?php echo ($this->item->featured) ? ' itemIsFeatured' : ''; ?><?php if($this->item->params->get('pageclass_sfx')) echo ' '.$this->item->params->get('pageclass_sfx'); ?>">
-
+<div id="k2Container" class="col-md-9 itemView<?php echo ($this->item->featured) ? ' itemIsFeatured' : ''; ?><?php if($this->item->params->get('pageclass_sfx')) echo ' '.$this->item->params->get('pageclass_sfx'); ?>">
+	<div class="service_page service_content">
 	<!-- Plugins: BeforeDisplay -->
 	<?php echo $this->item->event->BeforeDisplay; ?>
 
 	<!-- K2 Plugins: K2BeforeDisplay -->
 	<?php echo $this->item->event->K2BeforeDisplay; ?>
 
-	<div class="itemHeader">
+
+	<div class="service_content__title itemHeader">
 
 		<?php if($this->item->params->get('itemDateCreated')): ?>
 		<!-- Date created -->
@@ -39,31 +40,32 @@ defined('_JEXEC') or die;
 		</span>
 		<?php endif; ?>
 
-	  <?php if($this->item->params->get('itemTitle')): ?>
-	  <!-- Item title -->
-	  <h2 class="itemTitle">
-			<?php if(isset($this->item->editLink)): ?>
-			<!-- Item edit link -->
-			<span class="itemEditLink">
+		<?php if($this->item->params->get('itemTitle')): ?>
+			<!-- Item title -->
+			<div class="h2 itemTitle">
+				<?php if(isset($this->item->editLink)): ?>
+					<!-- Item edit link -->
+					<span class="itemEditLink">
 				<a class="modal" rel="{handler:'iframe',size:{x:990,y:550}}" href="<?php echo $this->item->editLink; ?>">
 					<?php echo JText::_('K2_EDIT_ITEM'); ?>
 				</a>
 			</span>
-			<?php endif; ?>
+				<?php endif; ?>
 
-	  	<?php echo $this->item->title; ?>
+				<?php echo $this->item->title; ?>
 
-	  	<?php if($this->item->params->get('itemFeaturedNotice') && $this->item->featured): ?>
-	  	<!-- Featured flag -->
-	  	<span>
+				<?php if($this->item->params->get('itemFeaturedNotice') && $this->item->featured): ?>
+					<!-- Featured flag -->
+					<span>
 		  	<sup>
 		  		<?php echo JText::_('K2_FEATURED'); ?>
 		  	</sup>
 	  	</span>
-	  	<?php endif; ?>
+				<?php endif; ?>
 
-	  </h2>
-	  <?php endif; ?>
+			</div>
+		<?php endif; ?>
+
 
 		<?php if($this->item->params->get('itemAuthor')): ?>
 		<!-- Item Author -->
@@ -673,13 +675,14 @@ defined('_JEXEC') or die;
   <?php endif; ?>
 
 	<?php if(!JRequest::getCmd('print')): ?>
-	<div class="itemBackToTop">
-		<a class="k2Anchor" href="<?php echo $this->item->link; ?>#startOfPageId<?php echo JRequest::getInt('id'); ?>">
-			<?php echo JText::_('K2_BACK_TO_TOP'); ?>
+<!--	<div class="itemBackToTop">
+		<a class="k2Anchor" href="<?php /*echo $this->item->link; */?>#startOfPageId<?php /*echo JRequest::getInt('id'); */?>">
+			<?php /*echo JText::_('K2_BACK_TO_TOP'); */?>
 		</a>
-	</div>
+	</div>-->
 	<?php endif; ?>
 
 	<div class="clr"></div>
+</div>
 </div>
 <!-- End K2 Item Layout -->
