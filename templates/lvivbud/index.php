@@ -126,17 +126,19 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 			<jdoc:include type="modules" name="first_screen" style="none" />
 		</div>
     </div>
+<!--    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+        </div>
+    </div>-->
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
+
 				<jdoc:include type="component" />
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<jdoc:include type="modules" name="content" style="xhtml" />
+                <jdoc:include type="modules" name="content" style="xhtml" />
 			</div>
 		</div>
 	</div>
