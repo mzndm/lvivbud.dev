@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fields name="params">
+    <fieldset name="simple_slide_params">
+	
+      <field name="YjK2SliderFields][showSliderOn" type="list" default="itemview" label="Where to display the slider?" description="You can display slider in item view , category list view or both">
+        <option value="itemview">Item view</option>
+        <option value="categoryview">Category list view</option>
+		<option value="both">Both</option>
+      </field>
+	
+      <field name="YjK2SliderFields][disablek2image" type="list" default="0" label="Disable k2 image in item view" description="Disable k2 image in item view">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </field>
+      <field name="YjK2SliderFields][disablek2imagecat" type="list" default="0" label="Disable k2 image in category view" description="Disable k2 image in category list view">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </field>
+      <field name="YjK2SliderFields][slider_width" type="text" default="100%" label="Slider width" description="Enter slider width. You can use px or percentage. If percentage is used, slider will be automatically responsive. If px is used, you will have to add your own responsive css. " />
+      <field name="YjK2SliderFields][slider_height" type="text" default="355px" label="Slider height" description="Enter slider height. Note, do not use percentage for height , px only. If slider width is percentage , the height will auto adjust." />
+      <field name="YjK2SliderFields][stime" type="text" default="6000" label="Slide time:" description="Slide time" />
+      <field name="YjK2SliderFields][sduration" type="text" default="600" label="Transition duration:" description="Slide duration" />
+      <field name="YjK2SliderFields][sorient" type="list" default="1" label="Slide orientation" description="Slide orientation">
+        <option value="0">vertical</option>
+        <option value="1">horizontal</option>
+      </field>
+      <field name="YjK2SliderFields][type_slider" type="list" default="0" label="Slide Type" description="Type slider">
+        <option value="0">fade</option>
+        <option value="1">scroll</option>
+        <option value="2">scrollfade</option>
+      </field>
+      <field name="YjK2SliderFields][visibleItems" type="text" default="2" label="Thumbnail scroll start after image?" description="Thumbnail scroll is function that will scroll to next thumb. Please note that images sequence starts from 0. Count is 0 = 1 , 1 = 2, 2 = 3 and so on. Optimal setting with 4 thumbs visible and 8 images to slide would be 3 "/>
+      <field name="YjK2SliderFields][thumb_resize" type="list" default="0" label="Thumbnail image resize" description="If set to yes , thumbnail image will take the size of the thumbnail container. This might cause image distortion. If set to no , portion of the image will be used as thumbnail.">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+      </field>
+      <field name="YjK2SliderFields][autoSlide" type="list" default="0" label="Automatic slides" description="Yes-No">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+      </field>
+      <field name="YjK2SliderFields][sliderLocation" type="list" default="onK2BeforeDisplayContent" label="Slider location" description="Select the default slider location on K2 item view. If you are using embed in content option please remember to add string {yjk2slider} inside your item text.">
+        <option value="onK2BeforeDisplayContent">Before intro text</option>
+        <option value="onK2AfterDisplayContent">After intro text</option>
+        <option value="onK2BeforeDisplay">Before title</option>
+        <option value="onK2AfterDisplayTitle">After title</option>
+		<option value="onK2PrepareContent">Embed in content</option>
+      </field>
+    </fieldset>
+  </fields>
+</form>
