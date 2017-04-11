@@ -1,6 +1,6 @@
 /* Module Brainymore styles */
 .bm_over{position:relative; overflow:hidden; width:100%; height:auto;}
-.bm_slider{position:relative; overflow:hidden;white-space:normal; border-radius:5px; width:100%;}
+.bm_slider{position:relative; overflow:hidden;white-space:normal; border-radius:5px; margin: 0 auto;}
 .bm_slider .bm_slider_item{overflow:hidden;white-space:normal; width:100%;}
 .bm_slider .bm_slider_item a img{ width: 100%; height: auto }
 /** For default layout **/
@@ -20,9 +20,11 @@
 div.bm_slider_default:hover ~ div.bm_slider_button{left:0px;}
 /** End for default layout **/
 
+
+
 /** For theme1 layout **/
 
-.bm_slider_theme1 .bm_slider_item{ padding: 4px;}
+.bm_slider_theme1 .bm_slider_item{ margin: 0;}
 .bm_slider_theme1 .bm_slider_item:hover{ 
 	-moz-border-radius: 5px;
 	border-radius: 5px;

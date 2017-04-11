@@ -12,8 +12,8 @@ if(!empty($items)):
 
 ?>
 
-<div class="bm_over bm_over_<?php echo $theme;?>">
-    <div id="bm_slider_<?php echo $module->id;?>" class="bm_slider bm_slider_<?php echo $theme;?>" 
+<div class="col-md-12 bm_over bm_over_<?php echo $theme;?>">
+    <div id="bm_slider_<?php echo $module->id;?>" class="bm_slider bm_slider_<?php echo $theme;?>"
         data-cycle-fx="<?php echo $effect;?>"
         data-cycle-timeout="<?php echo $timeout;?>"
         data-cycle-carousel-visible=<?php echo $visible;?>
@@ -31,12 +31,12 @@ if(!empty($items)):
         data-cycle-pager-active-class=<?php echo $pager_active_class;?>
         >
         <?php foreach ($items as $item) : ?> 
-            <div class="bm_slider_item">
+            <div class="col-md-3 bm_slider_item">
                 <a href="<?php echo $params->get('addLinkToImage')? $item->link : "javascript:void(0)"; ?>" >
                     <img src="<?php echo htmlspecialchars($item->image); ?>" alt="<?php echo htmlspecialchars($item->title); ?>" class="cubeRandom" />
                 </a>
                            
-                <div class="bm_slider_title">
+                <div class="bm_slider_title h3">
                     <a href="<?php echo $item->link; ?>" title="<?php echo htmlspecialchars($item->title); ?>"><?php echo htmlspecialchars($item->title);?></a>
                 </div>
                 <?php if($show_desc):?>
@@ -48,12 +48,20 @@ if(!empty($items)):
                             	<?php echo JText::_($readmore_label); ?>
                             </a>
                         <?php endif;?>
+
                     </div>
                 </div>
                 <?php endif;?>
+
             </div>
-        <?php endforeach; ?> 
-    
+        <?php endforeach; ?>
+
+
+
+
+
+
+
     </div>
     
     <div class="bm_slider_button">
