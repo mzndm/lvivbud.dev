@@ -24,14 +24,14 @@ div.bm_slider_default:hover ~ div.bm_slider_button{left:0px;}
 
 /** For theme1 layout **/
 
-.bm_slider_theme1 .bm_slider_item{ margin: 0;}
-.bm_slider_theme1 .bm_slider_item:hover{ 
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	background: #dedede;
-}
-.bm_slider_theme1 .bm_slider_item .bm_slider_title{margin-bottom:5px;margin-top:5px;text-align: center;}
-.bm_slider_theme1 .bm_slider_item .bm_slider_title a{ font-size: 13pt;font-weight: bold;}
+/*.bm_slider_theme1 .bm_slider_item{ margin: 0;}*/
+/*.bm_slider_theme1 .bm_slider_item:hover{ */
+	/*-moz-border-radius: 5px;*/
+	/*border-radius: 5px;*/
+	/*background: #dedede;*/
+/*}*/
+/*.bm_slider_theme1 .bm_slider_item .bm_slider_title{margin-bottom:5px;margin-top:5px;text-align: center;}*/
+/*.bm_slider_theme1 .bm_slider_item .bm_slider_title a{ font-size: 13pt;font-weight: bold;}*/
 .bm_slider_theme1 .bm_slider_item .bm_slider_desc{ font-size: 11pt;padding: 0 4px;text-align: left;}
 .bm_slider_theme1 .bm_slider_item .bm_slider_desc .bm_desc_inside a.bm_readmore_button{ font-weight:bold}
 
