@@ -56,7 +56,7 @@ defined('_JEXEC') or die;
 
 			<?php if($this->params->get('catTitle')): ?>
 			<!-- Category title -->
-			<h2><?php echo $this->category->name; ?><?php if($this->params->get('catTitleItemCounter')) echo ' ('.$this->pagination->total.')'; ?></h2>
+			<!--<div class="module_title h2"><?php /*echo $this->category->name; */?><?php /*if($this->params->get('catTitleItemCounter')) echo ' ('.$this->pagination->total.')'; */?></div>-->
 			<?php endif; ?>
 
 			<?php if($this->params->get('catDescription')): ?>
@@ -133,11 +133,11 @@ defined('_JEXEC') or die;
 
 	<?php if((isset($this->leading) || isset($this->primary) || isset($this->secondary) || isset($this->links)) && (count($this->leading) || count($this->primary) || count($this->secondary) || count($this->links))): ?>
 	<!-- Item list -->
-	<div class="itemList">
+	<div class="works works_intro itemList">
 
 		<?php if(isset($this->leading) && count($this->leading)): ?>
 		<!-- Leading items -->
-		<div id="itemListLeading">
+
 			<?php foreach($this->leading as $key=>$item): ?>
 
 			<?php
@@ -148,19 +148,19 @@ defined('_JEXEC') or die;
 				$lastContainer='';
 			?>
 			
-			<div class="itemContainer<?php echo $lastContainer; ?>"<?php echo (count($this->leading)==1) ? '' : ' style="width:'.number_format(100/$this->params->get('num_leading_columns'), 1).'%;"'; ?>>
+
 				<?php
 					// Load category_item.php by default
 					$this->item=$item;
 					echo $this->loadTemplate('item');
 				?>
-			</div>
+
 			<?php if(($key+1)%($this->params->get('num_leading_columns'))==0): ?>
 			<div class="clr"></div>
 			<?php endif; ?>
 			<?php endforeach; ?>
 			<div class="clr"></div>
-		</div>
+
 		<?php endif; ?>
 
 		<?php if(isset($this->primary) && count($this->primary)): ?>
@@ -252,10 +252,10 @@ defined('_JEXEC') or die;
 
 	<!-- Pagination -->
 	<?php if($this->pagination->getPagesLinks()): ?>
-	<div class="k2Pagination">
+	<div class="works_intro__pagination k2Pagination">
 		<?php if($this->params->get('catPagination')) echo $this->pagination->getPagesLinks(); ?>
 		<div class="clr"></div>
-		<?php if($this->params->get('catPaginationResults')) echo $this->pagination->getPagesCounter(); ?>
+<!--		--><?php //if($this->params->get('catPaginationResults')) echo $this->pagination->getPagesCounter(); ?>
 	</div>
 	<?php endif; ?>
 

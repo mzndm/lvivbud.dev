@@ -674,18 +674,18 @@ class JPagination
 	protected function _list_render($list)
 	{
 		// Reverse output rendering for right-to-left display.
-		$html = '<div class="pagination__wrapper">';
-//		$html .= '<div class="pagination__item pagination__item--start">' . $list['start']['data'] . '</div>';
-		$html .= '<div class="pagination__item pagination__item--prev">' . $list['previous']['data'] . '</div>';
+		$html = '<ul>';
+		$html .= '<li class="pagination-start">' . $list['start']['data'] . '</li>';
+		$html .= '<li class="pagination-prev">' . $list['previous']['data'] . '</li>';
 
 		foreach ($list['pages'] as $page)
 		{
-			$html .= '<div class="pagination__item">' . $page['data'] . '</div>';
+			$html .= '<li>' . $page['data'] . '</li>';
 		}
 
-		$html .= '<div class="pagination__item pagination__item--next">' . $list['next']['data'] . '</div>';
-//		$html .= '<div class="pagination__item pagination__item--end">' . $list['end']['data'] . '</div>';
-		$html .= '</div>';
+		$html .= '<li class="pagination-next">' . $list['next']['data'] . '</li>';
+		$html .= '<li class="pagination-end">' . $list['end']['data'] . '</li>';
+		$html .= '</ul>';
 
 		return $html;
 	}
@@ -775,7 +775,7 @@ class JPagination
 
 		// Set the start and previous data objects.
 		$data->start = new JPaginationObject(JText::_('JLIB_HTML_START'), $this->prefix);
-		$data->previous = new JPaginationObject(JText::_('PAGINATION_JPREV'), $this->prefix);
+		$data->previous = new JPaginationObject(JText::_('JPREV'), $this->prefix);
 
 		if ($this->pagesCurrent > 1)
 		{
@@ -791,7 +791,7 @@ class JPagination
 		}
 
 		// Set the next and end data objects.
-		$data->next = new JPaginationObject(JText::_('PAGINATION_JNEXT'), $this->prefix);
+		$data->next = new JPaginationObject(JText::_('JNEXT'), $this->prefix);
 		$data->end = new JPaginationObject(JText::_('JLIB_HTML_END'), $this->prefix);
 
 		if ($this->pagesCurrent < $this->pagesTotal)

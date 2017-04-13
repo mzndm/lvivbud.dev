@@ -16,15 +16,25 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 ?>
 
 <!-- Start K2 Item Layout -->
-<div class="catItemView group<?php echo ucfirst($this->item->itemGroup); ?><?php echo ($this->item->featured) ? ' catItemIsFeatured' : ''; ?><?php if($this->item->params->get('pageclass_sfx')) echo ' '.$this->item->params->get('pageclass_sfx'); ?>">
-
+<div class="col-md-3 catItemView group<?php echo ucfirst($this->item->itemGroup); ?><?php echo ($this->item->featured) ? ' catItemIsFeatured' : ''; ?><?php if($this->item->params->get('pageclass_sfx')) echo ' '.$this->item->params->get('pageclass_sfx'); ?>">
+<div class="works_intro__item">
 	<!-- Plugins: BeforeDisplay -->
 	<?php echo $this->item->event->BeforeDisplay; ?>
 
 	<!-- K2 Plugins: K2BeforeDisplay -->
 	<?php echo $this->item->event->K2BeforeDisplay; ?>
 
-	<div class="catItemHeader">
+	<?php if($this->item->params->get('catItemImage') && !empty($this->item->image)): ?>
+		<!-- Item Image -->
+		<div class="works_intro__item--img catItemImageBlock">
+			<a href="<?php echo $this->item->link; ?>" title="<?php if(!empty($this->item->image_caption)) echo K2HelperUtilities::cleanHtml($this->item->image_caption); else echo K2HelperUtilities::cleanHtml($this->item->title); ?>">
+				<img src="<?php echo $this->item->image; ?>" alt="<?php if(!empty($this->item->image_caption)) echo K2HelperUtilities::cleanHtml($this->item->image_caption); else echo K2HelperUtilities::cleanHtml($this->item->title); ?>" />
+			</a>
+			<div class="clr"></div>
+		</div>
+	<?php endif; ?>
+
+
 		<?php if($this->item->params->get('catItemDateCreated')): ?>
 		<!-- Date created -->
 		<span class="catItemDateCreated">
@@ -34,7 +44,7 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 
 	  <?php if($this->item->params->get('catItemTitle')): ?>
 	  <!-- Item title -->
-	  <h3 class="catItemTitle">
+	  <div class="works_intro__item--title catItemTitle">
 			<?php if(isset($this->item->editLink)): ?>
 			<!-- Item edit link -->
 			<span class="catItemEditLink">
@@ -45,7 +55,7 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 			<?php endif; ?>
 
 	  	<?php if ($this->item->params->get('catItemTitleLinked')): ?>
-			<a href="<?php echo $this->item->link; ?>">
+			<a class="h3" href="<?php echo $this->item->link; ?>">
 	  		<?php echo $this->item->title; ?>
 	  	</a>
 	  	<?php else: ?>
@@ -60,8 +70,28 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 		  	</sup>
 	  	</span>
 	  	<?php endif; ?>
-	  </h3>
+	  </div>
 	  <?php endif; ?>
+
+		<?php if($this->item->params->get('catItemExtraFields') && count($this->item->extra_fields)): ?>
+		<!-- Item extra fields -->
+		<div class="works_intro__item__extra_fields extra_fields catItemExtraFields">
+				<?php foreach ($this->item->extra_fields as $key=>$extraField): ?>
+					<?php if($extraField->value != ''): ?>
+						<div class="extra_fields__group <?php echo ($key%2) ? "odd" : "even"; ?> type<?php echo ucfirst($extraField->type); ?> group<?php echo $extraField->group; ?>">
+							<?php if($extraField->type == 'header'): ?>
+							<h4 class="catItemExtraFieldsHeader"><?php echo $extraField->name; ?></h4>
+							<?php else: ?>
+								<div class="extra_fields__group--label catItemExtraFieldsLabel"><?php echo $extraField->name; ?></div>
+								<div class="extra_fields__group--value catItemExtraFieldsValue"><?php echo $extraField->value; ?></div>
+							<?php endif; ?>
+						</div>
+					<?php endif; ?>
+				<?php endforeach; ?>
+
+			<div class="clr"></div>
+		</div>
+	<?php endif; ?>
 
 		<?php if($this->item->params->get('catItemAuthor')): ?>
 		<!-- Item Author -->
@@ -74,7 +104,7 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 			<?php endif; ?>
 		</span>
 		<?php endif; ?>
-  </div>
+
 
   <!-- Plugins: AfterDisplayTitle -->
   <?php echo $this->item->event->AfterDisplayTitle; ?>
@@ -110,17 +140,7 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 	  <!-- K2 Plugins: K2BeforeDisplayContent -->
 	  <?php echo $this->item->event->K2BeforeDisplayContent; ?>
 
-	  <?php if($this->item->params->get('catItemImage') && !empty($this->item->image)): ?>
-	  <!-- Item Image -->
-	  <div class="catItemImageBlock">
-		  <span class="catItemImage">
-		    <a href="<?php echo $this->item->link; ?>" title="<?php if(!empty($this->item->image_caption)) echo K2HelperUtilities::cleanHtml($this->item->image_caption); else echo K2HelperUtilities::cleanHtml($this->item->title); ?>">
-		    	<img src="<?php echo $this->item->image; ?>" alt="<?php if(!empty($this->item->image_caption)) echo K2HelperUtilities::cleanHtml($this->item->image_caption); else echo K2HelperUtilities::cleanHtml($this->item->title); ?>" style="width:<?php echo $this->item->imageWidth; ?>px; height:auto;" />
-		    </a>
-		  </span>
-		  <div class="clr"></div>
-	  </div>
-	  <?php endif; ?>
+
 
 	  <?php if($this->item->params->get('catItemIntroText')): ?>
 	  <!-- Item introtext -->
@@ -131,27 +151,7 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 
 		<div class="clr"></div>
 
-	  <?php if($this->item->params->get('catItemExtraFields') && count($this->item->extra_fields)): ?>
-	  <!-- Item extra fields -->
-	  <div class="catItemExtraFields">
-	  	<h4><?php echo JText::_('K2_ADDITIONAL_INFO'); ?></h4>
-	  	<ul>
-			<?php foreach ($this->item->extra_fields as $key=>$extraField): ?>
-			<?php if($extraField->value != ''): ?>
-			<li class="<?php echo ($key%2) ? "odd" : "even"; ?> type<?php echo ucfirst($extraField->type); ?> group<?php echo $extraField->group; ?>">
-				<?php if($extraField->type == 'header'): ?>
-				<h4 class="catItemExtraFieldsHeader"><?php echo $extraField->name; ?></h4>
-				<?php else: ?>
-				<span class="catItemExtraFieldsLabel"><?php echo $extraField->name; ?></span>
-				<span class="catItemExtraFieldsValue"><?php echo $extraField->value; ?></span>
-				<?php endif; ?>
-			</li>
-			<?php endif; ?>
-			<?php endforeach; ?>
-			</ul>
-	    <div class="clr"></div>
-	  </div>
-	  <?php endif; ?>
+
 
 	  <!-- Plugins: AfterDisplayContent -->
 	  <?php echo $this->item->event->AfterDisplayContent; ?>
@@ -271,9 +271,9 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 
 	<?php if ($this->item->params->get('catItemReadMore')): ?>
 	<!-- Item "read more..." link -->
-	<div class="catItemReadMore">
-		<a class="k2ReadMore" href="<?php echo $this->item->link; ?>">
-			<?php echo JText::_('K2_READ_MORE'); ?>
+	<div class="">
+		<a class="works_intro__item--to_project" href="<?php echo $this->item->link; ?>">
+			<?php echo JText::_('K2_TO_PROJECT'); ?>
 		</a>
 	</div>
 	<?php endif; ?>
@@ -282,11 +282,7 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 
 	<?php if($this->item->params->get('catItemDateModified')): ?>
 	<!-- Item date modified -->
-	<?php if($this->item->modified != $this->nullDate && $this->item->modified != $this->item->created ): ?>
-	<span class="catItemDateModified">
-		<?php echo JText::_('K2_LAST_MODIFIED_ON'); ?> <?php echo JHTML::_('date', $this->item->modified, JText::_('K2_DATE_FORMAT_LC2')); ?>
-	</span>
-	<?php endif; ?>
+
 	<?php endif; ?>
 
   <!-- Plugins: AfterDisplay -->
@@ -296,5 +292,7 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
   <?php echo $this->item->event->K2AfterDisplay; ?>
 
 	<div class="clr"></div>
+</div>
+
 </div>
 <!-- End K2 Item Layout -->
