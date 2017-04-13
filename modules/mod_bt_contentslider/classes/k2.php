@@ -234,12 +234,58 @@ class BtK2DataSource extends BTSource {
             }
 
 			// cut introtext
+//            if ($limitDescriptionBy == 'word') {
+//
+//                $item->description = self::substrword($item->introtext, $maxDesciption, $replacer, $isStrips, $stringtags);
+//            } else {
+//
+//                $item->description = self::substring($item->introtext, $maxDesciption, $replacer, $isStrips, $stringtags);
+//            }
+//            $item->categoryLink = urldecode(JRoute::_(K2HelperRoute::getCategoryRoute($item->catid . ':' . urlencode($item->categoryalias))));
+
+            // REPLACE intro/full text With extra-field info
+            $extras = json_decode($item->extra_fields); // JSON Array we'll call extras (note final 's' : not to confuse with below variable)
+            foreach ($extras as $key=>$extraField): //Get values from array
+                if($extraField->value != ''):  //If not empty
+                    if($extraField->id == '3'):
+                        if($extraField->value != ''): // If there's content in the extrafield of that ID
+                            $extra = $extraField->value; //Give $extra that value so we can hand it down below
+                        endif;
+                    endif;
+                endif;
+            endforeach;
+            foreach ($extras as $key=>$extraField): //Get values from array
+                if($extraField->value != ''):  //If not empty
+                    if($extraField->id == '2'):
+                        if($extraField->value != ''): // If there's content in the extrafield of that ID
+                            $extra = $extraField->value; //Give $extra that value so we can hand it down below
+                        endif;
+                    endif;
+                endif;
+            endforeach;
+
+            // cut introtext
             if ($limitDescriptionBy == 'word') {
 
-                $item->description = self::substrword($item->introtext, $maxDesciption, $replacer, $isStrips, $stringtags);
+                // $item->description = self::substrword($item->introtext, $maxDesciption, $replacer, $isStrips, $stringtags);
+                $item->description = self::substrword($extra, $maxDesciption, $replacer, $isStrips, $stringtags);
             } else {
 
-                $item->description = self::substring($item->introtext, $maxDesciption, $replacer, $isStrips, $stringtags);
+                // $item->description = self::substring($item->introtext, $maxDesciption, $replacer, $isStrips, $stringtags);
+                $item->description = self::substring($extra, $maxDesciption, $replacer, $isStrips, $stringtags) ;
+
+            }
+            $item->categoryLink = urldecode(JRoute::_(K2HelperRoute::getCategoryRoute($item->catid . ':' . urlencode($item->categoryalias))));
+
+            if ($limitDescriptionBy == 'word') {
+
+                // $item->description = self::substrword($item->introtext, $maxDesciption, $replacer, $isStrips, $stringtags);
+                $item->description = self::substrword($extra, $maxDesciption, $replacer, $isStrips, $stringtags);
+            } else {
+
+                // $item->description = self::substring($item->introtext, $maxDesciption, $replacer, $isStrips, $stringtags);
+                $item->description = self::substring($extra, $maxDesciption, $replacer, $isStrips, $stringtags) ;
+
             }
             $item->categoryLink = urldecode(JRoute::_(K2HelperRoute::getCategoryRoute($item->catid . ':' . urlencode($item->categoryalias))));
 

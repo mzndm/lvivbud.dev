@@ -74,7 +74,7 @@ class BtContentDataSource extends BTSource {
 
         $model->setState('params', $appParams);
 
-        $model->setState('list.select', 'a.urls, a.images, a.fulltext, a.id, a.title, a.alias, a.introtext, a.state, a.catid, a.created, a.created_by, a.created_by_alias,' . ' a.modified, a.modified_by,a.publish_up, a.publish_down, a.attribs, a.metadata, a.metakey, a.metadesc, a.access,' . ' a.hits, a.featured,' . ' LENGTH(a.fulltext) AS readmore');
+        $model->setState('list.select', 'a.urls, a.images, a.fulltext, a.id, a.title, a.alias, a.introtext, a.extra_fields, a.state, a.catid, a.created, a.created_by, a.created_by_alias,' . ' a.modified, a.modified_by,a.publish_up, a.publish_down, a.attribs, a.metadata, a.metakey, a.metadesc, a.access,' . ' a.hits, a.featured,' . ' LENGTH(a.fulltext) AS readmore');
         // Set the filters based on the module params
 
         $model->setState('list.start', 0);
