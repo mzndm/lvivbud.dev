@@ -62,12 +62,11 @@
   font-family: Ubuntu-Bold;
   margin-top: 9em;
 
-  a {
+  #scroll {
     transform: rotate(90deg);
     display: block;
     color: #fff;
     font-size: 2em;
-    //font-family: Ubuntu;
     font-family: monospace;
 
     &:hover, &:focus {

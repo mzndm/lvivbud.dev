@@ -75,6 +75,12 @@ h4, .h4 {
   font: 1em/1.5em Ubuntu-Bold;
   text-transform: uppercase;
 }
+.custom__first_screen {
+  overflow: auto;
+}
+#services {
+  margin-top: 3px;
+}
 .page-header {
   .h2 {
     text-align: left;
