@@ -14,7 +14,9 @@
     background: url(../img/background_header.png);
     height: 4em;
     padding: 0 5px;
-
+    &:hover {
+      background: url(../img/hover_bg.png);
+    }
     .services__item--link {
       display: flex;
       width: 100%;
@@ -58,7 +60,7 @@
   }
   &__link {
     display: block;
-    font-family: Ubuntu-Bold;
+    font-family: Ubuntu;
     color:  #383838;
     font-size: 1em;
     line-height: 2em;

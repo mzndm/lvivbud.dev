@@ -133,10 +133,10 @@ defined('_JEXEC') or die;
 
 	<!-- Pagination -->
 	<?php if($this->pagination->getPagesLinks()): ?>
-	<div class="k2Pagination">
+	<div class="works_intro__pagination k2Pagination">
 		<?php echo $this->pagination->getPagesLinks(); ?>
 		<div class="clr"></div>
-		<?php echo $this->pagination->getPagesCounter(); ?>
+<!--		--><?php //echo $this->pagination->getPagesCounter(); ?>
 	</div>
 	<?php endif; ?>
 

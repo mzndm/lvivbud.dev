@@ -118,22 +118,30 @@ h4, .h4 {
     display: inline-block;
     font-size: 0.75em;
     line-height: 3em;
+    &:nth-child(2) {
+      .pathway {
+        display: inline-block;
+        background-image: url(../img/home_icon.png);
+        width: 14px;
+        height: 12px;
+        background-repeat: no-repeat;
+        line-height: 3em;
+        vertical-align: middle;
+        span {
+          display: none;
+        }
+      }
+    }
+    a {
+      color: #333;
+    }
+  }
+  .active:first-child {
+    display: none;
   }
   .divider {
     color: #bababa;
     margin: 0 5px;
-  }
-  .pathway {
-    display: inline-block;
-    background-image: url(../img/home_icon.png);
-    width: 14px;
-    height: 12px;
-    background-repeat: no-repeat;
-    line-height: 3em;
-    vertical-align: middle;
-    span {
-      display: none;
-    }
   }
 }
 
@@ -145,7 +153,7 @@ h4, .h4 {
   margin: 3em auto 7em;
 
   .partners_slider__item {
-
+    outline: none;
     &--img {
       margin: 0 auto;
       max-width: 100%;
