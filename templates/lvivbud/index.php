@@ -62,11 +62,11 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 
 </head>
 
-<body class="site <?php echo $class; ?>">
+<body class="<?php echo $class; ?>">
 	<!-- Body -->
 
 	<!-- Header -->
-
+<div class="site">
 	<div class="container-fluid header">
 		<div class="row header_phone_menu">
 			<div class="container">
@@ -126,13 +126,7 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 			<jdoc:include type="modules" name="first_screen" style="none" />
 		</div>
     </div>
-<!--    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
 
-            </div>
-        </div>
-    </div>-->
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -177,11 +171,6 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 
 
 	<!-- End Content -->
-
-
-
-
-
 	<!-- Footer -->
 
 	<footer class="container-fluid">
@@ -196,6 +185,7 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 			</div>
 		</div>
 	</footer>
+</div>
 	<div class="container-fluid footer_bottom">
 		<div class="row">
 			<div class="col-md-12">

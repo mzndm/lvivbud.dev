@@ -23,10 +23,15 @@ $border: 1px solid $grey;
 
 
 
-.site {
+html, body {
   font-family: 'Ubuntu', sans-serif;
+  position: relative;
 }
-
+.site {
+  height: 100%;
+  min-height: 100vh;
+  margin-bottom: -2em;
+}
 p {
   font-family: Ubuntu, sans-serif;
   color:  #383838;
@@ -252,6 +257,10 @@ h4, .h4 {
       color: $green;
     }
   }
+  .footer_map {
+    height: 406px;
+    margin-bottom: 0;
+  }
 }
 
 #map {
@@ -446,10 +455,16 @@ h4, .h4 {
 .pagination__item.pagination__item--prev {
   border-left: 1px solid #c6c6c6;
   border-radius: 5px 0 0 5px;
+  span {
+    background: none;
+  }
 }
 .pagination__item.pagination__item--next {
   border-right: 1px solid #c6c6c6;
   border-radius: 0 5px 5px 0;
+  span {
+    background: none;
+  }
 }
 
 .work_item {
@@ -512,4 +527,16 @@ h4, .h4 {
 
 .realized_slider__item {
   border: $border;
+}
+
+// grayscale css filter ==================================
+.grayscale {
+  img {
+    filter: grayscale(1);
+  }
+  &:hover {
+    img {
+      filter: grayscale(0);
+    }
+  }
 }

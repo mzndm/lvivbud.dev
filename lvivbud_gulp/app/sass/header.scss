@@ -86,9 +86,42 @@ $green: #42b988;
 }
 .open {
   .separator {
+	  border-bottom: none!important;
     &:after {
       content: '▼';
       transform: rotate(180deg);
     }
   }
+}
+.dropdown-menu {
+	column-count: 3;
+	border-top: 0;
+	left: -10.2em;
+	padding: 0;
+	border-radius: 0;
+	border-bottom: 3px solid $green;
+	li {
+		width: 14.85em;
+		height: 3em;
+		display: inline-block;
+		margin-right: -6px;
+		&:hover {
+			border-bottom: $green;
+		}
+		a {
+			padding: 3px 0 3px 10px;;
+			text-decoration: underline;
+			color: #a7a7a7;
+			white-space: normal;
+			display: flex;
+			align-items: center;
+			height: 100%;
+			width: 100%;
+			&:hover {
+				background: none;
+				border-bottom: 2px solid $green;
+				padding-bottom: 1px;
+			}
+		}
+	}
 }
