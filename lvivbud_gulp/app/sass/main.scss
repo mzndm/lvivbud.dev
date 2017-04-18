@@ -234,16 +234,26 @@ h4, .h4 {
     font-family: Ubuntu-Bold;
     text-decoration: underline;
     cursor: pointer;
+    &:hover {
+      text-decoration: none;
+      color:#383838;
+    }
   }
 }
 
 .bottom_text_wrapper {
   position: relative;
-  height: 180px;
+  height: 110px;
   overflow: hidden;
-  &.show {
-    height: auto;
+  p {
+    display: block;
   }
+}
+.uncheck:after {
+  content: "Детальніше";
+}
+.check:after {
+  content: "Стисло";
 }
 
 /* contact_page start ============================*/

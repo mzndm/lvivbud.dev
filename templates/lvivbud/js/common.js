@@ -16,7 +16,7 @@ jQuery(document).ready(function($) {
 
     $('.services_dropdown').click(function () {
         $('.dropdown').toggleClass('open');
-    });
+      });
 
     $('#scroll').click("#services", function (event) {
         event.preventDefault();
@@ -24,10 +24,35 @@ jQuery(document).ready(function($) {
         var id  = $(this).attr('href'),
         //узнаем высоту от начала страницы до блока на который ссылается якорь
         top = $(id).offset().top;
-        //анимируем переход на расстояние - top за 1500 мс
+        //анимируем переход на расстояние - top
         $('body,html').animate({scrollTop: top}, 600);
 
-    } );
+    });
+
+//  =====================   readmore button   =====================
+
+    var maxHeight = 0;
+    $('.bottom_text_wrapper').children().each(function() {
+        maxHeight = maxHeight + $(this).outerHeight(true);
+    });
+    var flag = false;
+    $('.readmore').click(function(event) {
+        event.preventDefault();
+        if (flag == false) {
+            $('.bottom_text_wrapper').animate({
+                'height': maxHeight
+            }, 2000);
+            flag = true;
+            $(this).addClass('check').removeClass('uncheck');
+        } else {
+            $('.bottom_text_wrapper').animate({
+                'height': '110'
+            }, 2000);
+            flag = false;
+            $(this).addClass('uncheck').removeClass('check');
+        };
+
+    });
 
 
 //  =====================   sliders   =================================
@@ -80,9 +105,9 @@ jQuery(document).ready(function($) {
 
 //  =====================  end sliders   =================================
 
-    $('.readmore').click(function() {
+ /*   $('.readmore').click(function() {
         $('.bottom_text_wrapper').toggleClass('show');
-    });
+    });*/
 
 
 
