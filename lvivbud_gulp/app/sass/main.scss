@@ -549,9 +549,90 @@ h4, .h4 {
   padding: 1em;
 }
 
-.realized_slider__item {
-  border: $border;
+.realized_slider {
+  width: 90%;
+  margin: 0 auto;
+  height: 530px;
+  &__arrow {}
+  .bt_handles {
+    top: 400px;
+    left: 46.2%;
+    li {
+      margin: 0 5px;
+      a {
+        background: #c6c6c6;
+        font-size: 0;
+        line-height: 0;
+        display: block;
+        width: 10px;
+        height: 10px;
+      }
+    }
+    .current {
+      a {
+        background: $green;
+      }
+    }
+  }
+  &__dots {
+    position: absolute;
+    padding: 0 !important;
+    border: 0 !important;
+    z-index: 101;
+    bottom: 15%;
+    left: 48%;
+    right: 0;
+    margin: 0 auto;
+  }
+  &__container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  &__slide {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__item {
+    @extend .works_intro__item;
+    width: 31%;
+  }
+  &__image {
+    @extend .works_intro__item--img;
+  }
+  &__title {
+    @extend .works_intro__item--title;
+  }
+  &__extra_fields {
+    @extend .extra_fields
+  }
+  .extra_fields__group {
+    display: block;
+    &:first-child {
+      border-right: $border;
+    }
+  }
+  &__all_projects {
+    padding-top: 3em;
+    text-align: center;
+    line-height: 2em;
+    font-size: 1em;
+    border-bottom: 2px solid $green;
+    width: 100px;
+    margin: 0 auto;
+    display: block;
+    a {
+      color: $green;
+      &:hover {
+        color: #191919;
+        text-decoration: none;
+      }
+    }
+  }
 }
+//.realized_slider__item {
+//  border: $border;
+//}
 
 // grayscale css filter ==================================
 .grayscale {

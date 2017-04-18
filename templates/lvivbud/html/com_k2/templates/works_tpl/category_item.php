@@ -271,7 +271,7 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 
 	<?php if ($this->item->params->get('catItemReadMore')): ?>
 	<!-- Item "read more..." link -->
-	<div class="">
+	<div class="works_intro__item--readmore">
 		<a class="works_intro__item--to_project" href="<?php echo $this->item->link; ?>">
 			<?php echo JText::_('K2_TO_PROJECT'); ?>
 		</a>

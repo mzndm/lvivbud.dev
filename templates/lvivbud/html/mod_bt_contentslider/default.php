@@ -1,4 +1,7 @@
 <?php
+echo '<pre style="display: none;">';
+print_r($pages);
+echo '</pre>';
 /**
  * @package 	mod_bt_contentslider - BT ContentSlider Module
  * @version		1.4
@@ -17,9 +20,12 @@ defined('_JEXEC') or die('Restricted access');
 if($modal){JHTML::_('behavior.modal');}
 $document = JFactory::getDocument();
 if(count($list)>0){?>
-<div id="btcontentslider<?php echo $module->id; ?>" style="display:none;width:<?php echo $moduleWidthWrapper;?>" class="bt-cs<?php echo $moduleclass_sfx? ' bt-cs'.$params->get('moduleclass_sfx'):'';?>">
+<div id="btcontentslider<?php echo $module->id; ?>" style="display:none;" class="realized_slider bt-cs<?php echo $moduleclass_sfx? ' bt-cs'.$params->get('moduleclass_sfx'):'';?>">
 	<?php if( $next_back && $totalPages  > 1  ) : ?>
-	<a class="prev" href="#">Prev</a><a class="next" href="#">Next</a> 
+	<div class="realized_slider__arrow">
+		<a class="realized_slider__arrow--prev prev" href="#">Prev</a>
+		<a class="realized_slider__arrow--next next" href="#">Next</a>
+	</div>
 	<?php endif; ?>
 	<?php 
 		$add_style = "";
@@ -34,13 +40,15 @@ if(count($list)>0){?>
 		<?php   }?>
 	</h3>
 	<?php } ?>
-	<div class="slides_container" style="width:<?php echo $moduleWidth.";".$add_style;?>">
+	<div class="realized_slider__container slides_container " style="">
 
 	<?php foreach( $pages as $key => $list ): ?>
-		<div class="slide" style="width:<?php echo $moduleWidth;?>">
+<!--		<div class="realized_slider__slide slide">-->
+		<div class="realized_slider__slide slide" style="width:<?php echo $moduleWidth;?>">
 		<?php foreach( $list as $i => $row ): ?>
-			<div class="bt-row <?php if($i==0) echo 'bt-row-first'; else if($i==count($list)-1) echo 'bt-row-last' ?>"  style="width:<?php echo $itemWidth;?>%" >
-				<div class="bt-inner">
+<!--			<div class="realized_slider__item bt-row <?php /*if($i==0) echo 'bt-row-first'; else if($i==count($list)-1) echo 'bt-row-last' */?>"  >-->
+			<div class="realized_slider__item bt-row <?php if($i==0) echo 'bt-row-first'; else if($i==count($list)-1) echo 'bt-row-last' ?>"   >
+
 				<?php if( $row->thumbnail && $align_image != "center"): ?>
 					<a target="<?php echo $openTarget; ?>" class="bt-image-link<?php echo $modal? ' modal':''?>" title="<?php echo $row->title;?>" href="<?php echo $modal?$row->mainImage:$row->link;?>">
 					  <img <?php echo $imgClass ?>  src="<?php echo $row->thumbnail; ?>" alt="<?php echo $row->title?>"  style="width:<?php echo $thumbWidth ;?>px; float:<?php echo $align_image;?>;margin-<?php echo $align_image=="left"? "right":"left";?>:5px" title="<?php echo $row->title?>" />
@@ -57,20 +65,25 @@ if(count($list)>0){?>
 					<?php endif; ?><br />
 					<?php endif; ?>
 
-					<?php if( $showTitle ): ?>
-					<a class="bt-title" target="<?php echo $openTarget; ?>"
-						title="<?php echo $row->title; ?>"
-						href="<?php echo $row->link;?>"> <?php echo $row->title_cut; ?> </a><br />
-					<?php endif; ?>
+
 					<?php if( $row->thumbnail && $align_image == "center" ): ?>
-					<div class="bt-center">
+					<div class="realized_slider__image bt-center">
 					<a target="<?php echo $openTarget; ?>"
-						class="bt-image-link<?php echo $modal? ' modal':''?>"
-						title="<?php echo $row->title;?>" href="<?php echo $modal?$row->mainImage:$row->link;?>">
-						<img <?php echo $imgClass ?> src="<?php echo $row->thumbnail; ?>" alt="<?php echo $row->title?>"  style="width:<?php echo $thumbWidth ;?>px;" title="<?php echo $row->title?>" />
+						class="image__link bt-image-link<?php echo $modal? ' modal':''?>"
+						href="<?php echo $modal?$row->mainImage:$row->link;?>">
+						<img class="image__img" <?php echo $imgClass ?> src="<?php echo $row->thumbnail; ?>" alt="<?php echo $row->title?>"   />
 					</a>
 					</div>
 					<?php endif ; ?>
+
+                    <?php if( $showTitle ): ?>
+						<div class="realized_slider__title">
+							<a class="h3" target="<?php echo $openTarget; ?>"
+							   title="<?php echo $row->title; ?>"
+							   href="<?php echo $row->link;?>"> <?php echo $row->title_cut; ?> </a>
+						</div>
+                    <?php endif; ?>
+
 					<?php if( $showAuthor || $showDate ): ?>
 					<div class="bt-extra">
 					<?php if( $showAuthor ): ?>
@@ -91,16 +104,38 @@ if(count($list)>0){?>
 					</div>
 					<?php endif; ?>
 
+                    <?php $extra_fields = json_decode($row->extra_fields, true); ?>
+					<div class="realized_slider__extra_fields ">
+						<div class="extra_fields__group">
+							<div class="extra_fields__group--label">
+								<?php echo JText::_('K2_EXTRA_DAY'); ?>:
+							</div>
+							<div class="extra_fields__group--value">
+								<?php echo $extra_fields[1]['value']; ?>
+							</div>
+						</div>
+
+						<div class="extra_fields__group">
+							<div class="extra_fields__group--label">
+								<?php echo JText::_('K2_EXTRA_TASK'); ?>:
+							</div>
+							<div class="extra_fields__group--value">
+								<?php echo $extra_fields[3]['value']; ?>
+							</div>
+						</div>
+					</div>
 					<?php if( $showReadmore ) : ?>
-					<p class="readmore">
-						<a target="<?php echo $openTarget; ?>"
-							title="<?php echo $row->title;?>"
-							href="<?php echo $row->link;?>"> <?php echo JText::_('READ_MORE');?>
-						</a>
-					</p>
+						<div class="works_intro__item--readmore">
+							<a class="works_intro__item--to_project"
+							   target="<?php echo $openTarget; ?>"
+							   title="<?php echo $row->title;?>"
+							   href="<?php echo $row->link;?>">
+								<?php echo JText::_('K2_TO_PROJECT'); ?>
+							</a>
+						</div>
 					<?php endif; ?>
 
-				</div>
+
 				<!--end bt-inner -->
 			</div>
 			<!--end bt-row -->
@@ -112,12 +147,13 @@ if(count($list)>0){?>
 			}
 			?>
 			<?php endforeach; ?>
-			<div style="clear: both;"></div>
+<!--			<div style="clear: both;"></div>-->
 
 		</div>
 		<!--end bt-main-item page	-->
 		<?php endforeach; ?>
 	</div>
+	<div class="realized_slider__all_projects"><a href="/vykonani-roboty">Усі проекти ></a></div>
 </div>
 <!--end bt-container -->
 <div style="clear: both;"></div>
@@ -141,7 +177,7 @@ if(count($list)>0){?>
 			height: <?php echo $moduleHeight=='auto'? "'auto'":$params->get( 'module_height', 0 ); ?>,
 			pause: 100,
 			preload: true,
-			paginationClass: '<?php echo $butlet==1 ? 'bt_handles': 'bt_handles_num' ?>',
+			paginationClass: '<?php echo $butlet==1 ? 'bt_handles' : 'bt_handles_num' ?>',
 			generateNextPrev:false,
 			prependPagination:true,
 			touchScreen:<?php echo $touchScreen ?>
@@ -155,8 +191,8 @@ if(count($list)>0){?>
 		if(trim($params->get('content_title'))) $nav_top += 13;
 		$document->addStyleDeclaration(
 			$modid . ' ' . ($butlet == 1 ? '.bt_handles' : '.bt_handles_num') . '{'.
-				'top: ' . $nav_top .'px !important;'.
-				'right: ' . $nav_right . 'px !important'.
+//				'top: ' . $nav_top .'px !important;'.
+//				'right: ' . $nav_right . 'px !important'.
 			'}'
 		);
 

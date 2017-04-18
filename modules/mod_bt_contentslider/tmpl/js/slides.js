@@ -196,7 +196,7 @@
 						// move next slide to right of previous
 						control.children(':eq('+ next +')').css({
 							left: position,
-							display: 'block'
+							display: 'flex'
 						});
 						// animate to new height
 						if (option.autoHeight) {

@@ -51,7 +51,6 @@ jQuery(document).ready(function($) {
             flag = false;
             $(this).addClass('uncheck').removeClass('check');
         };
-
     });
 
 
