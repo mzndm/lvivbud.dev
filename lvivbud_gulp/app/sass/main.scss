@@ -18,6 +18,7 @@ $border: 1px solid $grey;
 
 }
 
+@import "media", "media-queries";
 @import "header", "first_screen", "services";
 @import "footer";
 
@@ -74,12 +75,6 @@ h3, .h3 {
 h4, .h4 {
   font: 1em/1.5em Ubuntu-Bold;
   text-transform: uppercase;
-}
-.custom__first_screen {
-  overflow: auto;
-}
-#services {
-  margin-top: 3px;
 }
 .page-header {
   .h2 {
@@ -551,7 +546,7 @@ h4, .h4 {
 // =================  realized_slider  ================
 .realized_slider {
   width: 90%;
-  margin: 2em auto 12em;
+  margin: 1em auto 12em;
   height: 370px;
   &__arrow {
     &--prev {

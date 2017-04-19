@@ -70,10 +70,10 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 	<div class="container-fluid header">
 		<div class="row header_phone_menu">
 			<div class="container">
-				<div class="col-md-4">
+				<div class="col-sm-4">
 					<jdoc:include type="modules" name="language" style="none" />
 				</div>
-				<div class="col-md-8">
+				<div class="col-sm-8">
 					<jdoc:include type="modules" name="header_phone" style="none" />
 				</div>
 			</div>
