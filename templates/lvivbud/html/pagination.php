@@ -16,12 +16,12 @@ function pagination_list_render($list)
     // конец перебора массива
 
     // Далее отрисовываем пагинацию так, как нам захочется
-    if ($current > 1) $html .= GWaddRow($gwpages, $list['previous'], 'pagination-prev');
+    if ($current > 0) $html .= GWaddRow($gwpages, $list['previous'], 'pagination__item--prev');
     if ($current > 1) {
-        $html .= GWaddRow($gwpages, $list['start'], 'pagination-start1');
+//        $html .= GWaddRow($gwpages, $list['start'], 'pagination-start1');
     }
 
-    if ($current > 3) $html .= '...';
+    if ($current > 3) $html .= '<div class="pagination__item"><span>...</span></div>';
 
     if (isset($list['pages'][$current - 1])) $html .= GWaddRow($gwpages, $list['pages'][$current - 1]);
 
@@ -33,15 +33,15 @@ function pagination_list_render($list)
         if (isset($list['pages'][$current + 2])) $html .= GWaddRow($gwpages, $list['pages'][$current + 2]);
     }
 
-    if ($current < ($countPages - 2)) $html .= '...';
+    if ($current < ($countPages - 2)) $html .= '<div class="pagination__item"><span>...</span></div>';
 
 
     if ($current != $list['endPage'] && ++$current != $list['endPage']) {
-        $html .= GWaddRow($gwpages, $list['end'], 'pagination-end');
+//        $html .= GWaddRow($gwpages, $list['end'], 'pagination-end');
     }
-    if (--$current < $countPages) $html .= GWaddRow($gwpages, $list['next'], 'pagination-next');
+    if (--$current < $countPages+1) $html .= GWaddRow($gwpages, $list['next'], 'pagination__item--next');
 
-    return '<ul>' . $html . '</ul>';
+    return '<div class="pagination__wrapper">' . $html . '</div>';
 }
 
 // конец главной функции
@@ -59,9 +59,9 @@ function GWaddRow($pages, $page, $class = '', $endPage = false)
         $textPage = $page['data'];
     }
 
-    $row = '<li';
-    $row .= ($class) ? ' class="' . $class . '">' : '>';
-    $row .= $textPage . '</li>';
+    $row = '<div';
+    $row .= ($class) ? ' class="pagination__item ' . $class . '">' : ' class="pagination__item ">';
+    $row .= $textPage . '</div>';
     $pages[] = $page;
     return $row;
 }
