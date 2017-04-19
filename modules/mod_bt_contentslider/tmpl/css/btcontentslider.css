@@ -36,7 +36,7 @@
 }
 .bt-cs a.next {
 	/*background: url(../images/re-right.png) right center no-repeat !important;*/
-	text-indent: -9999px;
+	text-indent: 9999px;
 	position:absolute;
 	z-index:100;
 	margin:0;
