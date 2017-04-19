@@ -551,14 +551,22 @@ h4, .h4 {
 
 .realized_slider {
   width: 90%;
-  margin: 0 auto;
-  height: 530px;
-  &__arrow {}
+  margin: 2em auto 12em;
+  height: 370px;
+  &__arrow {
+    &--prev {
+      background: url("../img/arrow.png") left center no-repeat;
+    }
+    &--next {
+      background: url("../img/arrow.png") right center no-repeat;
+      transform: rotate(180deg);
+    }
+  }
   .bt_handles {
     top: 400px;
-    left: 46.2%;
+    left: 44.5%;
     li {
-      margin: 0 5px;
+      margin: 0 10px;
       a {
         background: #c6c6c6;
         font-size: 0;
@@ -613,7 +621,7 @@ h4, .h4 {
     }
   }
   &__all_projects {
-    padding-top: 3em;
+    padding-top: 4em;
     text-align: center;
     line-height: 2em;
     font-size: 1em;

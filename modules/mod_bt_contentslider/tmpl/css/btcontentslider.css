@@ -35,7 +35,7 @@
 	opacity:1;
 }
 .bt-cs a.next {
-	background: url(../images/re-right.png) right center no-repeat !important;
+	/*background: url(../images/re-right.png) right center no-repeat !important;*/
 	text-indent: -9999px;
 	position:absolute;
 	z-index:100;
@@ -44,7 +44,7 @@
 	right:0;
 }
 .bt-cs a.prev {
-	background: url(../images/re-left.png) left center no-repeat !important;
+	/*background: url(../images/re-left.png) left center no-repeat !important;*/
 	text-indent: -9999px;
 	position:absolute;
 	z-index:999;
