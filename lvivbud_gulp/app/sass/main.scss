@@ -96,6 +96,7 @@ h4, .h4 {
 }
 .article_img--right {
   float: right;
+  max-width: 50%;
   margin-left: 3em;
   margin-bottom: 1em;
 }
@@ -160,14 +161,24 @@ h4, .h4 {
       max-width: 100%;
     }
   }
-
   .company_slider__item {
     padding: 0 7em;
-
+    @include max-screen($tablet-portrait) {
+      padding: 0 3em;
+    }
     &--img {
         float: left;
         margin-right: 4em;
+       @include max-screen($tablet-portrait) {
+          max-width: 40%;
+          margin-right: 2em;
+       }
+    }
+    &--title {
+      @include max-screen($tablet-portrait) {
+        margin-top: 0;
       }
+    }
   }
 
   .slick-dots {
@@ -277,6 +288,10 @@ h4, .h4 {
   .footer_map {
     height: 406px;
     margin-bottom: 0;
+    @include max-screen($tablet-portrait) {
+      margin-bottom: 2em;
+      margin-top: -70px;
+    }
   }
 }
 
@@ -293,11 +308,20 @@ h4, .h4 {
   @include max-screen($tablet-landscape) {
     width: 81%;
   }
+  @include max-screen($tablet-portrait) {
+    width: 100%;
+  }
   &__item {
     float: left;
     margin: 0 10px;
     border: 1px solid #e8e8e8;
     text-align: center;
+    @include max-screen($tablet-portrait) {
+      width: 30%;
+    }
+    &--img {
+      width: 100%;
+    }
     &--name {
       margin-top: 1.5em;
       margin-bottom: 0;
@@ -519,6 +543,7 @@ h4, .h4 {
 .work_item__content {
   border: $border;
   border-radius: 5px;
+  margin-bottom: 1em;
 }
 .work_description {
   &__title {

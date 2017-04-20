@@ -11,7 +11,7 @@
 defined('_JEXEC') or die;
 ?>
 
-<div id="k2ModuleBox<?php echo $module->id; ?>" class="col-md-3 k2ItemsBlock<?php if($params->get('moduleclass_sfx')) echo ' '.$params->get('moduleclass_sfx'); ?>">
+<div id="k2ModuleBox<?php echo $module->id; ?>" class="col-md-3 col-sm-4 k2ItemsBlock<?php if($params->get('moduleclass_sfx')) echo ' '.$params->get('moduleclass_sfx'); ?>">
 
 	<?php if($params->get('itemPreText')): ?>
 	<p class="modulePretext"><?php echo $params->get('itemPreText'); ?></p>

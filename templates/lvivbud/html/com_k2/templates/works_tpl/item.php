@@ -49,7 +49,7 @@ defined('_JEXEC') or die;
 
     <!-- K2 Plugins: K2BeforeDisplay -->
     <?php echo $this->item->event->K2BeforeDisplay; ?>
-    <div class="col-md-4">
+    <div class="col-md-4 col-sm-12">
     <div class="work_item__content work_description">
 
         <?php if($this->item->params->get('itemTitle')): ?>
@@ -293,7 +293,7 @@ defined('_JEXEC') or die;
     </div>
     </div>
     <!-- K2 Plugins: K2AfterDisplayContent -->
-    <div class="col-md-8">
+    <div class="col-md-8 col-sm-12">
         <div class="work_item__content work_slider">
             <div class="slider_project">
                 <?php echo $this->item->event->K2AfterDisplayContent; ?>

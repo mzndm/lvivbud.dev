@@ -9,7 +9,7 @@
   background-position-x: 100%;
   color: #fff;
   height: 89vh;
-  @include min-screen($desctop) {
+  @include max-screen($desctop - 1px) {
     height: 92vh;
   }
 }
@@ -25,6 +25,9 @@
   }
   @include max-screen($tablet-landscape) {
     padding-top: 20%;
+  }
+  @include screen($tablet-portrait, $tablet-landscape) {
+    padding-top: 40%;
   }
   &__wrapper {
 

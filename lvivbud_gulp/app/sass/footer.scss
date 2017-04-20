@@ -50,6 +50,9 @@ footer {
 		@include max-screen($tablet-landscape) {
 			margin-top: 1em;
 		}
+		@include max-screen($tablet-portrait) {
+			margin-bottom: 3em;
+		}
 
 		&--left {
 			padding-left: 0;
