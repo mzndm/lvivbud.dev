@@ -13,8 +13,10 @@ footer {
       text-align: left;
       line-height: 1.733;
     }
-	&__title {
-
+	&__title.h3 {
+		@include max-screen($tablet-landscape) {
+			margin-bottom: 0;
+		}
 		&:before {
 			content: "";
 			background: $green;
@@ -28,7 +30,9 @@ footer {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
+		line-height: 2em;
 		margin-top: 1em;
+		flex-wrap: wrap;
 		&--phone {
 
 		}
@@ -43,6 +47,9 @@ footer {
 	&__form {
 		margin-top: 2em;
 		height: 150px;
+		@include max-screen($tablet-landscape) {
+			margin-top: 1em;
+		}
 
 		&--left {
 			padding-left: 0;

@@ -81,12 +81,12 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 
 		<div class="row">
 			<div class="container">
-				<div class="col-md-2 header_logo">
+				<div class="col-sm-2 header_logo">
 					<!-- <jdoc:include type="modules" name="header_logo" style="none" /> -->
 					<a href="/"><img src="/templates/lvivbud/img/logo_header.png"></a>
 				</div>
 
-				<div class="col-md-10 header_menu">
+				<div class="col-sm-10 header_menu">
 
 					<nav class="navbar navbar-default">
 						<div class="container-fluid">

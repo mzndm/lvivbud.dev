@@ -64,19 +64,23 @@ jQuery(document).ready(function($) {
          slidesToShow: 6,
          slidesToScroll: 2,
          autopalay: true,
-         autoplaySpeed: 2000
-
-         // responsive: [
-         //     {
-         //         breakpoint: 1024,
-         //         settings: {
-         //             slidesToShow: 3,
-         //             slidesToScroll: 3,
-         //             infinite: true,
-         //             dots: true
-         //         }
-         //     }
-         // ]
+         autoplaySpeed: 2000,
+         responsive: [
+             {
+                 breakpoint: 1025,
+                 settings: {
+                     slidesToShow: 5,
+                     slidesToScroll: 2
+                 }
+             },
+             {
+                 breakpoint: 769,
+                 settings: {
+                     slidesToShow: 2,
+                     slidesToScroll: 2
+                 }
+             }
+         ]
      });
 
     $('#company').slick({

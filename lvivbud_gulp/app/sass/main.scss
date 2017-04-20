@@ -37,7 +37,7 @@ p {
   font-family: Ubuntu, sans-serif;
   color:  #383838;
   font-size: 1em;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 h1, .h1 {
   font-family: Ubuntu-Bold;
@@ -290,6 +290,9 @@ h4, .h4 {
   height: 350px;
   width: 67%;
   margin: 0 auto 4em;
+  @include max-screen($tablet-landscape) {
+    width: 81%;
+  }
   &__item {
     float: left;
     margin: 0 10px;
@@ -415,6 +418,12 @@ h4, .h4 {
     text-align: center;
     padding: 1em;
     border-bottom: 1px solid $grey;
+    @include max-screen($tablet-landscape) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 4.5em;
+    }
     &:nth-child(2n-1) {
       display: none;
     }
@@ -637,6 +646,9 @@ h4, .h4 {
 .grayscale {
   img {
     filter: grayscale(1);
+    @include max-screen($tablet-landscape) {
+      filter: grayscale(0)
+    }
   }
   &:hover {
     img {

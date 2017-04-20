@@ -6,6 +6,7 @@
   width: 100%;
   background-image: url(../img/first_screen_bg.png);
   background-size: cover;
+  background-position-x: 100%;
   color: #fff;
   height: 89vh;
   @include min-screen($desctop) {
@@ -21,6 +22,9 @@
   padding-top: 20%;
   @include max-screen($notebook) {
     padding-top: 10%;
+  }
+  @include max-screen($tablet-landscape) {
+    padding-top: 20%;
   }
   &__wrapper {
 
@@ -40,6 +44,9 @@
   width: 40%;
   margin: 0 auto;
   overflow: hidden;
+  @include max-screen($tablet-landscape) {
+    width: 60%;
+  }
 }
 
 .advantage__item {
@@ -86,11 +93,25 @@
     color: #fff;
     font-size: 2em;
     font-family: monospace;
+    animation: magic-mouse 1s infinite ease;
 
     &:hover, &:focus {
       color: #fff;
       text-decoration: none;
     }
+  }
+}
+@keyframes magic-mouse {
+  0% {
+    padding-left: 6px;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    padding-left: 18px;
+    opacity: 0;
   }
 }
 
