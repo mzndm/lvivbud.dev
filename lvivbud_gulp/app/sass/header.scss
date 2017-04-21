@@ -46,29 +46,55 @@
   }
 }
 .header_menu {
+	max-height: 4.4em;
 	.navbar {
 		float: right;
 		margin: 0;
 		border: 0;
+		@include max-screen($tablet-portrait - 1px) {
+			float: initial;
+		}
+	}
+	.navbar-header {
+		height: 4.4em;
+		.navbar-toggle {
+			margin: 14px 15px ;
+		}
 	}
 	.navbar-default {
 		background: none;
 	}
 	.container-fluid, .navbar-collapse {
 		padding: 0;
+		margin: 0;
+		width: 100%;
 	}
 	.navbar-default {
 		.navbar-nav {
+			@include max-screen($tablet-portrait - 1px) {
+				position: absolute;
+				margin: 0;
+				width:100%;
+				z-index: 2;
+			}
 			> li {
-				//display: inline-block;
+				@include max-screen($tablet-portrait - 1px) {
+					background: #fff;
+				}
 				> a, span {
 					font-size: 16px;
 					color: #000;
 					border-right: 1px solid #e8e8e8;
 					border-bottom: 1px solid #e8e8e8;
 					padding: 20px 17px;
-                  @include max-screen($tablet-portrait) {
+                  //@include max-screen($tablet-portrait) {
+                  //  padding: 20px 5px;
+                  //}
+                  @include ipad {
                     padding: 20px 5px;
+                  }
+                  @include max-screen($tablet-portrait -1px) {
+                    padding: 20px 17px;
                   }
 				}
 				&:nth-child(2)  {
@@ -113,6 +139,10 @@
 	padding: 0;
 	border-radius: 0;
 	border-bottom: 3px solid $green;
+	@include ipad {
+		column-count: 2;
+		left: -8.5em;
+	}
 	li {
 		width: 14.85em;
 		height: 3em;

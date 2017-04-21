@@ -70,10 +70,10 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 	<div class="container-fluid header">
 		<div class="row header_phone_menu">
 			<div class="container">
-				<div class="col-sm-4">
+				<div class="col-sm-4 col-xs-4">
 					<jdoc:include type="modules" name="language" style="none" />
 				</div>
-				<div class="col-sm-8">
+				<div class="col-sm-8 col-xs-8">
 					<jdoc:include type="modules" name="header_phone" style="none" />
 				</div>
 			</div>
@@ -81,12 +81,12 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 
 		<div class="row">
 			<div class="container">
-				<div class="col-sm-2 header_logo">
+				<div class="col-sm-2 col-xs-4 header_logo">
 					<!-- <jdoc:include type="modules" name="header_logo" style="none" /> -->
 					<a href="/"><img src="/templates/lvivbud/img/logo_header.png"></a>
 				</div>
 
-				<div class="col-sm-10 header_menu">
+				<div class="col-sm-10 col-xs-8 header_menu">
 
 					<nav class="navbar navbar-default">
 						<div class="container-fluid">

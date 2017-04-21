@@ -56,6 +56,10 @@ footer {
 
 		&--left {
 			padding-left: 0;
+			@include phone(landscape) {
+				width: 50%;
+				float: left;
+			}
 		}
 		&--right {
 			@extend .contact__form--left;

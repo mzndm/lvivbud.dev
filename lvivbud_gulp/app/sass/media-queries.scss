@@ -209,6 +209,20 @@
     @content;
   }
 }
+// --- phone ------------------------------------------------------------
+
+@mixin phone($orientation: false) {
+  $min: 360px;
+  $max: 640px;
+
+  @include mq(
+          $min-device-width: $min,
+          $max-device-width: $max,
+          $orientation: $orientation
+  ) {
+    @content;
+  }
+}
 
 // --- orientation -------------------------------------------------------------
 

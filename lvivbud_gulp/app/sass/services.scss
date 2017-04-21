@@ -4,6 +4,9 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  @include max-screen($tablet-portrait) {
+    justify-content: space-around;
+  }
 }
 .services__item {
   width: 200px;

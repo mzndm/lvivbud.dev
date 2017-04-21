@@ -12,6 +12,9 @@
   @include max-screen($desctop - 1px) {
     height: 92vh;
   }
+  @include phone(landscape) {
+    height: 75vh;
+  }
 }
 #services {
   margin-top: 3px;
@@ -26,8 +29,11 @@
   @include max-screen($tablet-landscape) {
     padding-top: 20%;
   }
-  @include screen($tablet-portrait, $tablet-landscape) {
+  @include max-screen($tablet-portrait) {
     padding-top: 40%;
+  }
+  @include phone(landscape) {
+    padding-top: 5%;
   }
   &__wrapper {
 
@@ -40,6 +46,9 @@
     font-family: Ubuntu-Bold;
     margin:0 auto 1.2em;
     color: #fff;
+    @include phone(landscape) {
+      margin-bottom: 0.5em;
+    }
   }
 }
 
@@ -47,8 +56,14 @@
   width: 40%;
   margin: 0 auto;
   overflow: hidden;
-  @include max-screen($tablet-landscape) {
+  @include ipad(landscape) {
     width: 60%;
+  }
+  @include ipad(portrait) {
+    width: 70%;
+  }
+  @include phone(landscape) {
+    width: 80%;
   }
 }
 
@@ -62,7 +77,9 @@
   &--number {
     font-family: 'Open Sans', sans-serif;
     font-size: 3.5em;
-
+    @include phone(landscape) {
+      font-size: 2.5em;
+    }
     &:before {
       content: "";
       background: #62fcc3;
@@ -75,6 +92,9 @@
   &--text {
     color: #fff;
     font: italic 1.4em 'OpenSansLight';
+    @include phone(landscape) {
+      font-size: 1.2em;
+    }
   }
 }
 
@@ -89,6 +109,10 @@
   font-size: 1.2em;
   text-transform: uppercase;
   font-family: Ubuntu-Bold;
+  @include phone(landscape) {
+    bottom: 0;
+    font-size: 1em;
+  }
 
   #scroll {
     transform: rotate(90deg);

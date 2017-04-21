@@ -36,7 +36,7 @@ defined('_JEXEC') or die;
 		<?php foreach($this->items as $item): ?>
 
 
-		<div class="col-md-3 tagItemView">
+		<div class="col-md-3 col-sm-4 tagItemView">
 
 		<div class="works_intro__item">
 
