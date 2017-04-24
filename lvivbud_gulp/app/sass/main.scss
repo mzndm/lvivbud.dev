@@ -153,12 +153,22 @@ h4, .h4 {
 .slider {
   width: 90%;
   margin: 3em auto 7em;
+  @include phone(portrait) {
+    width: 85%;
+  }
 
   .partners_slider__item {
     outline: none;
+    @include phone(portrait) {
+      margin: 0 10px;
+      display: flex;
+    }
     &--img {
       margin: 0 auto;
       max-width: 100%;
+      @include phone(portrait) {
+        margin: auto;
+      }
     }
   }
   .company_slider__item {
@@ -251,6 +261,9 @@ h4, .h4 {
   overflow: hidden;
   p {
     display: block;
+    @include phone(portrait) {
+      text-align: justify;
+    }
   }
 }
 .uncheck:after {

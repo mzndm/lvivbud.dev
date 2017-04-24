@@ -17,6 +17,9 @@ footer {
 		@include max-screen($tablet-landscape) {
 			margin-bottom: 0;
 		}
+        @include phone(portrait) {
+          margin-top: 0;
+        }
 		&:before {
 			content: "";
 			background: $green;
@@ -60,7 +63,10 @@ footer {
 				width: 50%;
 				float: left;
 			}
-		}
+            @include phone(portrait) {
+              padding-right: 0;
+            }
+		  }
 		&--right {
 			@extend .contact__form--left;
 			padding-right: 0;
@@ -99,6 +105,9 @@ footer {
 			padding-top: 4px;
 			cursor: pointer;
 			border: 1px solid $green;
+            @include phone(portrait) {
+              margin-bottom: 3em;
+            }
 			input {
 				display: none;
 			}

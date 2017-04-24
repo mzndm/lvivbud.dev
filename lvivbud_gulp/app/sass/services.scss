@@ -9,12 +9,22 @@
 .services__item {
   width: 200px;
   margin-bottom: 1.5em;
-
+  @include phone(portrait) {
+    width: 145px;
+  }
+  .moduleItemIntrotext {
+    img {
+      max-width: 100%;
+    }
+  }
   .services__item--title {
     display: block;
     background: url(../img/background_header.png);
     height: 4em;
     padding: 0 5px;
+    @include phone(portrait) {
+      font-size:0.9em;
+    }
     &:hover {
       background: url(../img/hover_bg.png);
     }
@@ -38,7 +48,9 @@
   }
 }
 .services__item--done {
-
+  @include phone(portrait) {
+    height: 185px;
+  }
   .services__item--title {
     height: 100%;
 
