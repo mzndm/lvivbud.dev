@@ -429,6 +429,7 @@ h4, .h4 {
       &:hover {
         background: url(../img/hover_bg.png);
         color: #fff;
+        text-decoration: none;
       }
     }
   }
@@ -679,5 +680,13 @@ h4, .h4 {
     img {
       filter: grayscale(0);
     }
+  }
+}
+.pageid-135 {
+  .background_gray {
+    background: none;
+  }
+  footer {
+    border-top: none;
   }
 }
