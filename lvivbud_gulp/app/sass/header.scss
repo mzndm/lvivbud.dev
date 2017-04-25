@@ -46,10 +46,19 @@
   > li:hover {
     border-bottom: 2px solid $green;
     height: 60px;
+	  @include phone(portrait) {
+		  height: auto;
+	  }
   }
 }
 .header_menu {
 	max-height: 4.3em;
+	@include phone(portrait) {
+		//position: absolute;
+		//width: 100%;
+		padding: 0;
+		//margin-left: -15px;
+	}
 	.navbar {
 		float: right;
 		margin: 0;
@@ -60,6 +69,9 @@
 	}
 	.navbar-header {
 		height: 4.4em;
+		@include phone(portrait) {
+			margin: 0;
+		}
 		.navbar-toggle {
 			margin: 14px 15px ;
 		}
@@ -72,6 +84,12 @@
 		margin: 0;
 		width: 100%;
 	}
+	.navbar-collapse {
+		@include phone(portrait) {
+			width: 100vw;
+			margin-left: -57%;
+		}
+	}
 	.navbar-default {
 		.navbar-nav {
 			@include max-screen($tablet-portrait - 1px) {
@@ -79,6 +97,14 @@
 				margin: 0;
 				width:100%;
 				z-index: 2;
+			}
+			@include phone(portrait) {
+				width: 100vw;
+			}
+			.parent {
+				@include phone() {
+					height: auto;
+				}
 			}
 			> li {
 				@include max-screen($tablet-portrait - 1px) {
@@ -93,6 +119,9 @@
                   //@include max-screen($tablet-portrait) {
                   //  padding: 20px 5px;
                   //}
+                  @include phone() {
+					  padding: 10px 20px;
+				  }
                   @include ipad {
                     padding: 20px 5px;
                   }
@@ -103,6 +132,9 @@
 				&:nth-child(2)  {
 					>a {
 						border-left: 1px solid #e8e8e8;
+						@include phone () {
+							border-left: 0;
+						}
 					}
 				}
 			}
@@ -113,6 +145,9 @@
 	display: block;
 	height: 61px;
 	cursor: pointer;
+	@include phone () {
+		height:auto;
+	}
 	&:after {
 		content: '▼';
         display: inline-block;
@@ -146,14 +181,29 @@
 		column-count: 2;
 		left: -8.5em;
 	}
+	@include phone(portrait) {
+		column-count: 1;
+	}
 	li {
 		width: 14.85em;
 		height: 3em;
 		display: inline-block;
 		margin-right: -6px;
+		@include phone {
+			width:100%;
+			margin: 0;
+			height: 2em;
+			border-bottom: 1px dotted $grey;
+			&:first-child {
+				border-top: 1px dotted $grey;
+			}
+			a {
+				padding-left: 30px;
+			}
+		}
 		a {
 			padding: 3px 0 3px 10px;;
-			text-decoration: underline;
+			//text-decoration: underline;
 			color: #a7a7a7;
 			white-space: normal;
 			display: flex;
