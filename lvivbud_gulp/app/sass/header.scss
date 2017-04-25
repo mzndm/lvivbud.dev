@@ -109,6 +109,9 @@
 			> li {
 				@include max-screen($tablet-portrait - 1px) {
 					background: #fff;
+                  &:last-child {
+                    border-bottom: 2px solid $green;
+                  }
 				}
 				> a, span {
 					font-size: 16px;

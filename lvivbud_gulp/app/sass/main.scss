@@ -53,6 +53,9 @@ h2, .h2 {
   text-transform: uppercase;
   text-align: center;
   color: #383838;
+  @include phone(portrait) {
+    margin-top: 35px;
+  }
 }
 .module_title {
   &:before {
@@ -71,6 +74,9 @@ h3, .h3 {
   text-transform: uppercase;
   font-family: Ubuntu-Bold;
   margin: 50px 0 25px;
+  @include phone(portrait) {
+    margin: 30px 0 15px;
+  }
 }
 h4, .h4 {
   font: 1em/1.5em Ubuntu-Bold;
@@ -99,6 +105,10 @@ h4, .h4 {
   max-width: 50%;
   margin-left: 3em;
   margin-bottom: 1em;
+  @include phone(portrait) {
+    max-width: 100%;
+    margin-left: 0;
+  }
 }
 
 .moduletable {
@@ -116,6 +126,8 @@ h4, .h4 {
 .breadcrumb {
   margin: 0;
   padding-left: 30px;
+  white-space: nowrap;
+  overflow: hidden;
   li {
     display: inline-block;
     font-size: 0.75em;
@@ -176,6 +188,9 @@ h4, .h4 {
     @include max-screen($tablet-portrait) {
       padding: 0 3em;
     }
+    @include phone(portrait) {
+      padding: 0 1.5em;
+    }
     &--img {
         float: left;
         margin-right: 4em;
@@ -183,10 +198,18 @@ h4, .h4 {
           max-width: 40%;
           margin-right: 2em;
        }
+      @include phone(portrait) {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 1em;
+      }
     }
     &--title {
       @include max-screen($tablet-portrait) {
         margin-top: 0;
+      }
+      @include phone(portrait) {
+        margin-top: 1em;
       }
     }
   }
@@ -232,11 +255,6 @@ h4, .h4 {
   }
 
 }
-
-
-
-
-
 
 
 /* bottom text module */
@@ -332,6 +350,10 @@ h4, .h4 {
     @include max-screen($tablet-portrait) {
       width: 30%;
     }
+    @include phone(portrait) {
+      width: 100%;
+      margin: 0 0 1em;
+    }
     &--img {
       width: 100%;
     }
@@ -375,6 +397,9 @@ h4, .h4 {
     padding: 4em 0;
     align-items: center;
     justify-content: center;
+    @include phone(portrait) {
+      width: 46%;
+    }
     &--img {
       max-width: 90%;
     }
@@ -537,6 +562,9 @@ h4, .h4 {
 .work_item {
   padding: 1.5em 0 3em;
   overflow: hidden;
+  &__navigation {
+    overflow: auto;
+  }
 }
 .navigation__button {
   float: right;
@@ -545,6 +573,9 @@ h4, .h4 {
     margin-right: 2em;
     font: 1em/3em Ubuntu-Bold;
     color: $green;
+    @include phone(portrait) {
+      margin-right: 10px;
+    }
     &:hover {
       color: #191919;
     }

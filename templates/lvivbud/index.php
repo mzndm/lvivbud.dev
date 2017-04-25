@@ -49,9 +49,21 @@ $class  = $active->alias . " pageid-" . $active->id;
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
  -->
 
-<?php 
-// Add Stylesheets
+<?php
 
+// Unset JUI Scripts
+
+//unset($doc->_scripts[JURI::root(true) . '/media/system/js/mootools-core.js']);
+//unset($doc->_scripts[JURI::root(true) . '/media/system/js/core.js']);
+//unset($doc->_scripts[JURI::root(true) . '/media/system/js/modal.js']);
+//unset($doc->_scripts[JURI::root(true) . '/media/system/js/caption.js']);
+//unset($doc->_scripts[JURI::root(true) . '/media/jui/js/jquery.min.js']);
+//unset($doc->_scripts[JURI::root(true) . '/media/jui/js/bootstrap.min.js']);
+//unset($doc->_scripts[JURI::root(true) . '/media/jui/js/jquery-noconflict.js']);
+//unset($doc->_scripts[JURI::root(true) . '/media/jui/js/jquery-migrate.min.js']);
+
+
+// Add Stylesheets
 $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/bootstrap.css');
 $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/slick.css');
 $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/slick-theme.css');

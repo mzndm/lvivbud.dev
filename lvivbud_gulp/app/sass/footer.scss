@@ -56,7 +56,10 @@ footer {
 		@include max-screen($tablet-portrait) {
 			margin-bottom: 3em;
 		}
-
+		@include phone(portrait) {
+			height: auto;
+			margin-bottom: 4em;
+		}
 		&--left {
 			padding-left: 0;
 			@include phone(landscape) {
