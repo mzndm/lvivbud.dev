@@ -98,54 +98,13 @@
     }
   }
 }
-// TODO: оптимизировать циклом
-.pageid {
-  &-118 {
-    .service_menu__item:nth-child(1) {
+@for $j from 1 through 15 {
+  $i: $j + 117;  // починаєм із 117 бо pageid "Фасадні роботи" = 118
+  .pageid-#{$i} {
+    .service_menu__item:nth-child(#{$j}) {
       .service_menu__link {
         color: $green;
       }
     }
   }
-  &-119 {
-    .service_menu__item:nth-child(2) {
-      .service_menu__link {
-        color: $green;
-      }
-    }
-  }
-  &-120 {
-    .service_menu__item:nth-child(3) {
-      .service_menu__link {
-        color: $green;
-      }
-    }
-  }
-  &-121 {
-    .service_menu__item:nth-child(4) {
-      .service_menu__link {
-        color: $green;
-      }
-    }
-  }
-  &-122 {
-    .service_menu__item:nth-child(5) {
-      .service_menu__link {
-        color: $green;
-      }
-    }
-  }
-
 }
-//
-//@for $i from 118 through 132 {
-//  @for $j from 1 through 15 {
-//    .pageid-#{$i} {
-//      .service_menu__item:nth-child(#{$j}){
-//        .service_menu__link {
-//          color: $green;
-//        }
-//      }
-//    }
-//  }
-//}

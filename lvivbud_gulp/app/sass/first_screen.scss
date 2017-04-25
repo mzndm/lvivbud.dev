@@ -8,13 +8,13 @@
   background-size: cover;
   background-position-x: 100%;
   color: #fff;
-  height: 89vh;
-  @include max-screen($desctop - 1px) {
-    height: 92vh;
-  }
-  @include phone(landscape) {
-    height: 75vh;
-  }
+  height: 88vh;
+  //@include max-screen($desctop - 1px) {
+  //  height: 92vh;
+  //}
+  //@include phone(landscape) {
+  //  height: 75vh;
+  //}
 }
 #services {
   margin-top: 3px;
@@ -120,6 +120,9 @@
   @include phone(landscape) {
     bottom: 0;
     font-size: 1em;
+  }
+  @include phone(portrait) {
+    bottom: 4em;
   }
 
   #scroll {
