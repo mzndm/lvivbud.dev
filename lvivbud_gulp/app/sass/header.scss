@@ -20,20 +20,46 @@
 	line-height: 2em;
 }
 .header_phones {
-	color: #fff;
-	float: right;
-	margin-bottom: 0;
-	padding-right: 15px;
-    @include phone(portrait) {
-      display: none;
+  color: #fff;
+  float: right;
+  margin-bottom: 0;
+  padding-right: 15px;
+  img {
+      margin-right: 10px;
+  }
+  .phones__normal {
+    &__link {
+      color: #fff
     }
-	img {
-		margin-right: 10px;
-	}
+  }
+  .phones_popup{
+    &__number {
+      display: none;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+      border:2px solid $green;
+      border-radius: 5px;
+      background: url(../img/background_header.png);
+    }
+    &__link {
+      display: block;
+      height: 2em;
+      line-height: 2em;
+      color: #fff;
+      text-align: center;
+    }
+  }
+  
+  .open{
+    display: block;
+  }
+
 }
 .header_logo a {
-	display: block;
-	padding: 9px 0;
+  display: block;
+  padding: 9px 0;
 }
 
 /*header menu*/

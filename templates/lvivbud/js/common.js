@@ -13,6 +13,10 @@ jQuery(document).ready(function($) {
     }
     menu();
 
+    $('#phones_popup__image').click(function () {
+        $('.phones_popup__number').toggleClass('open');
+    });
+
 
     $('.services_dropdown').click(function () {
         $('.dropdown').toggleClass('open');
@@ -81,7 +85,7 @@ jQuery(document).ready(function($) {
                  }
              },
              {
-                 breakpoint: 361,
+                 breakpoint: 641,
                  settings: {
                      slidesToShow: 3,
                      slidesToScroll: 2
