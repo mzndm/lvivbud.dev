@@ -37,7 +37,7 @@ $class  = $active->alias . " pageid-" . $active->id;
 
 
 <!DOCTYPE html>
-<html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
+<html lang="<?php echo $this->language; ?>" >
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
