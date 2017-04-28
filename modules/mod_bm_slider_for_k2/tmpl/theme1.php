@@ -32,7 +32,7 @@ if(!empty($items)):
         >
             <?php foreach ($items as $item) : ?>
 
-                <div class="col-md-3 bm_slider_item">
+                <div class="col-md-3 col-xs-12 bm_slider_item">
                     <div class="works_intro__item">
                         <a class="works_intro__item--img" href="<?php echo $params->get('addLinkToImage')? $item->link : "javascript:void(0)"; ?>" >
                             <img src="<?php echo htmlspecialchars($item->image); ?>" alt="<?php echo htmlspecialchars($item->title); ?>" class="cubeRandom" />
@@ -48,6 +48,29 @@ if(!empty($items)):
                                 </div>
                             </div>
                         <?php endif;?>
+
+
+                        <?php $extra_fields = json_decode($item->extra_fields, true); ?>
+                        <div class="realized_slider__extra_fields ">
+                            <div class="extra_fields__group">
+                                <div class="extra_fields__group--label">
+                                    <?php echo JText::_('K2_EXTRA_DAY'); ?>:
+                                </div>
+                                <div class="extra_fields__group--value">
+                                    <?php echo $extra_fields[1]['value']; ?>
+                                </div>
+                            </div>
+
+                            <div class="extra_fields__group">
+                                <div class="extra_fields__group--label">
+                                    <?php echo JText::_('K2_EXTRA_TASK'); ?>:
+                                </div>
+                                <div class="extra_fields__group--value">
+                                    <?php echo $extra_fields[3]['value']; ?>
+                                </div>
+                            </div>
+                        </div>
+
 
                         <?php if($show_readmore):?>
                             <a class="works_intro__item--to_project bm_readmore_button" href="<?php echo $item->link; ?>" title="<?php echo htmlspecialchars($item->title); ?>">

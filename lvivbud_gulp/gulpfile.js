@@ -1,7 +1,7 @@
  var gulp 		= require('gulp'),
 	 sass 		= require('gulp-sass'),
  	 sourcemaps = require('gulp-sourcemaps'),
- 	 cssmin     = require('gulp-cssmin'),
+ 	 // cssmin     = require('gulp-cssmin'),
  	 prefixer   = require('gulp-autoprefixer');
 	// browserSync = require('browser-sync'),
 	// concat 		= require('gulp-concat'),
@@ -12,7 +12,7 @@ gulp.task ('sass', function() {
 		.pipe(sourcemaps.init())
     	.pipe(sass())
 		.pipe(prefixer())
-		.pipe(cssmin())
+		// .pipe(cssmin())
     	.pipe(sourcemaps.write())
     	.pipe(gulp.dest('../templates/lvivbud/css'));
 });
