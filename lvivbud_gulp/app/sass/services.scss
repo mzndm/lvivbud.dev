@@ -9,9 +9,8 @@
 .services__item {
   width: 200px;
   margin-bottom: 1.5em;
-  @include phone(portrait) {
-    width: 145px;
-  }
+  @include max-screen($nexus-portrait){width: 145px;}
+  @include iphone5(portrait){width: 140px;}
   .moduleItemIntrotext {
     img {
       max-width: 100%;
@@ -48,9 +47,8 @@
   }
 }
 .services__item--done {
-  @include phone(portrait) {
-    height: 185px;
-  }
+  @include phone(portrait) {height: 185px;}
+  @include iphone5(landscape) {height: 185px;}
   .services__item--title {
     height: 100%;
 

@@ -33,13 +33,13 @@ if(!empty($items)):
             <?php foreach ($items as $item) : ?>
 
                 <div class="realized_slider__item bm_slider_item">
-<!--                    <div class="works_intro__item">-->
+
                         <a class="realized_slider__image" href="<?php echo $params->get('addLinkToImage')? $item->link : "javascript:void(0)"; ?>" >
                             <img src="<?php echo htmlspecialchars($item->image); ?>" alt="<?php echo htmlspecialchars($item->title); ?>" class="cubeRandom" />
                         </a>
 
 
-                        <a class="works_intro__item--title h3 bm_slider_title" href="<?php echo $item->link; ?>" title="<?php echo htmlspecialchars($item->title); ?>"><?php echo htmlspecialchars($item->title);?></a>
+                        <a class="realized_slider__title h3 bm_slider_title" href="<?php echo $item->link; ?>" title="<?php echo htmlspecialchars($item->title); ?>"><?php echo htmlspecialchars($item->title);?></a>
 
                         <?php if($show_desc):?>
                             <div class="bm_slider_desc">
@@ -77,9 +77,7 @@ if(!empty($items)):
                                 <?php echo JText::_('K2_TO_PROJECT'); ?>
                             </a>
                         <?php endif;?>
-<!--                    </div>-->
                 </div>
-                <!--            </div>-->
             <?php endforeach; ?>
 
             <?php foreach ($items as $extraField): ?>

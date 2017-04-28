@@ -630,6 +630,7 @@ h4, .h4 {
   @include ipad(landscape) {width: 740px;}
   @include ipad(portrait) {width: 500px;}
   @include max-screen($tablet-portrait) {width: 70%;}
+  //@include max-screen($iphone6-portrait) {width: 100%;}
   &__arrow {
     &--prev {
       background: url("../img/arrow.png") center no-repeat;
@@ -664,8 +665,8 @@ h4, .h4 {
     margin: 10px;
     @include ipad(landscape) {width: 230px !important;}
     @include ipad(portrait) {width: 230px !important;}
-    @include max-screen($tablet-portrait) {width: 220px !important;}
-    @include screen($iphone6-portrait, $iphone6-landscape) {width: 28.7vw !important;}
+    @include max-screen($tablet-portrait) {width: 30vw !important;}
+    @include screen($nexus-portrait+1px, $iphone6-landscape) {width: 28.7vw !important;}
     @include max-screen($iphone6-portrait) {width: 52vw !important;}
   }
   &__image {
@@ -673,6 +674,7 @@ h4, .h4 {
   }
   &__title {
     @extend .works_intro__item--title;
+    @include max-screen($tablet-portrait) {font-size: 0.9em}
   }
   &__extra_fields {
     @extend .extra_fields

@@ -223,6 +223,20 @@
     @content;
   }
 }
+// --- nexus5X ------------------------------------------------------------
+
+@mixin nexus5x($orientation: false) {
+  $min: 412px;
+  $max: 732px;
+
+  @include mq(
+          $min-device-width: $min,
+          $max-device-width: $max,
+          $orientation: $orientation
+  ) {
+    @content;
+  }
+}
 
 // --- orientation -------------------------------------------------------------
 

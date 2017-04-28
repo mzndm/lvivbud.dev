@@ -26,12 +26,9 @@
   @include max-screen($notebook) { padding-top: 10%; }
   @include max-screen($tablet-landscape) { padding-top: 20%;  }
   @include max-screen($tablet-portrait) { padding-top: 40%; }
-  @include phone(landscape) {
-    padding-top: 5%;
-  }
-  @include phone(portrait) {
-    padding-top: 5%;
-  }
+  @include phone(landscape) {padding-top: 5%;}
+  @include phone(portrait) {padding-top: 5%;}
+  @include nexus5x(landscape) {padding-top: 5%;}
   &__wrapper {
 
   }
@@ -43,9 +40,7 @@
     font-family: Ubuntu-Bold;
     margin:0 auto 1.2em;
     color: #fff;
-    @include phone(landscape) {
-      margin-bottom: 0.5em;
-    }
+    @include phone(landscape) {margin-bottom: 0.5em; font-size: 2em}
   }
 }
 
@@ -53,18 +48,11 @@
   width: 40%;
   margin: 0 auto;
   overflow: hidden;
-  @include ipad(landscape) {
-    width: 60%;
-  }
-  @include ipad(portrait) {
-    width: 70%;
-  }
-  @include phone(landscape) {
-    width: 80%;
-  }
-  @include phone(portrait) {
-    width: 80%;
-  }
+  @include ipad(landscape) {width: 60%; }
+  @include ipad(portrait) {width: 70%; }
+  @include phone(landscape) {width: 80%;}
+  @include phone(portrait) {width: 80%;}
+  @include max-screen($tablet-portrait) {width: 80%;}
 }
 
 .advantage__item {

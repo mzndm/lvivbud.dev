@@ -72,32 +72,26 @@
   > li:hover {
     border-bottom: 2px solid $green;
     height: 60px;
-	  @include phone() {
-		  height: auto;
-	  }
+	  @include phone() {height: auto;}
+	  @include max-screen($tablet-portrait) {height: auto;}
   }
 }
 .header_menu {
 	max-height: 4.3em;
-	@include phone(portrait) {
-		//position: absolute;
-		//width: 100%;
-		padding: 0;
-		//margin-left: -15px;
-	}
+	@include phone(portrait) {padding: 0;}
+	@include max-screen($tablet-portrait) {padding: 0;}
 	.navbar {
 		float: right;
 		margin: 0;
 		border: 0;
-		@include max-screen($tablet-portrait - 1px) {
+		@include max-screen($tablet-portrait) {
 			float: initial;
 		}
 	}
 	.navbar-header {
 		height: 4.4em;
-		@include phone(portrait) {
-			margin: 0;
-		}
+		@include phone(portrait) {margin: 0;}
+		@include max-screen($tablet-portrait) {margin: 0;}
 		.navbar-toggle {
 			margin: 14px 15px ;
 		}
@@ -118,7 +112,7 @@
 	}
 	.navbar-default {
 		.navbar-nav {
-			@include max-screen($tablet-portrait - 1px) {
+			@include max-screen($tablet-portrait) {
 				position: absolute;
 				margin: 0;
 				width:100%;
@@ -133,7 +127,7 @@
 				}
 			}
 			> li {
-				@include max-screen($tablet-portrait - 1px) {
+				@include max-screen($tablet-portrait) {
 					background: #fff;
                   &:last-child {
                     border-bottom: 2px solid $green;
@@ -145,16 +139,13 @@
 					border-right: 1px solid #e8e8e8;
 					border-bottom: 1px solid #e8e8e8;
 					padding: 20px 17px;
-                  //@include max-screen($tablet-portrait) {
-                  //  padding: 20px 5px;
-                  //}
                   @include phone() {
 					  padding: 10px 20px;
 				  }
                   @include ipad {
                     padding: 20px 5px;
                   }
-                  @include max-screen($tablet-portrait -1px) {
+                  @include max-screen($tablet-portrait) {
                     padding: 20px 17px;
                   }
 				}
@@ -206,19 +197,15 @@
 	padding: 0;
 	border-radius: 0;
 	border-bottom: 3px solid $green;
-	@include ipad {
-		column-count: 2;
-		left: -8.5em;
-	}
-	@include phone(portrait) {
-		column-count: 1;
-	}
+	@include ipad {column-count: 2; left: -8.5em;}
+	@include max-screen($tablet-portrait) {column-count: 1;}
+	@include nexus5x(landscape) {column-count: 1;}
 	li {
 		width: 14.85em;
 		height: 3em;
 		display: inline-block;
 		margin-right: -6px;
-		@include phone {
+		@include max-screen($tablet-portrait) {
 			width:100%;
 			margin: 0;
 			height: 2em;
@@ -230,9 +217,9 @@
 				padding-left: 30px;
 			}
 		}
+
 		a {
-			padding: 3px 0 3px 10px;;
-			//text-decoration: underline;
+			padding: 3px 0 3px 10px;
 			color: #a7a7a7;
 			white-space: normal;
 			display: flex;
