@@ -624,60 +624,41 @@ h4, .h4 {
 }
 // =================  realized_slider  ================
 .realized_slider {
-  width: 90%;
+  width: 830px;
   margin: 1em auto 12em;
-  height: 370px;
+  //height: 370px;
   &__arrow {
     &--prev {
       background: url("../img/arrow.png") center no-repeat;
+      left: 7%;
+      top: 40%;
     }
     &--next {
       background: url("../img/arrow.png") center no-repeat;
       transform: rotate(180deg);
-    }
-  }
-  .bt_handles {
-    top: 400px;
-    left: 44.5%;
-    li {
-      margin: 0 10px;
-      a {
-        background: #c6c6c6;
-        font-size: 0;
-        line-height: 0;
-        display: block;
-        width: 10px;
-        height: 10px;
-      }
-    }
-    .current {
-      a {
-        background: $green;
-      }
+      right: 7%;
+      top: 40%;
     }
   }
   &__dots {
-    position: absolute;
-    padding: 0 !important;
-    border: 0 !important;
-    z-index: 101;
-    bottom: 15%;
-    left: 48%;
-    right: 0;
-    margin: 0 auto;
-  }
-  &__container {
-    width: 80%;
-    margin: 0 auto;
-  }
-  &__slide {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    span {
+      font-size: 0;
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      cursor: pointer;
+      line-height: 0;
+      background: $grey;
+      margin: 10px;
+    }
+    .bm_slider_cycle_pager_active {
+      background: $green;
+    }
   }
   &__item {
     @extend .works_intro__item;
-    width: 31%;
+    width: 260px!important;
+    margin: 10px;
   }
   &__image {
     @extend .works_intro__item--img;
@@ -695,13 +676,13 @@ h4, .h4 {
     }
   }
   &__all_projects {
-    padding-top: 4em;
+    padding-top: 2em;
     text-align: center;
     line-height: 2em;
     font-size: 1em;
     border-bottom: 2px solid $green;
     width: 100px;
-    margin: 0 auto;
+    margin: 0 auto 4em;
     display: block;
     a {
       color: $green;

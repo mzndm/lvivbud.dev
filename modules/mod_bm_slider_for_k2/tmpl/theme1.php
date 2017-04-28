@@ -13,7 +13,7 @@ if(!empty($items)):
     ?>
 
     <div class="col-md-12 bm_over bm_over_<?php echo $theme;?>">
-        <div id="bm_slider_<?php echo $module->id;?>" class="works_intro bm_slider bm_slider_<?php echo $theme;?>"
+        <div id="bm_slider_<?php echo $module->id;?>" class="realized_slider bm_slider bm_slider_<?php echo $theme;?>"
              data-cycle-fx="<?php echo $effect;?>"
              data-cycle-timeout="<?php echo $timeout;?>"
              data-cycle-carousel-visible=<?php echo $visible;?>
@@ -32,9 +32,9 @@ if(!empty($items)):
         >
             <?php foreach ($items as $item) : ?>
 
-                <div class="col-md-3 col-xs-12 bm_slider_item">
-                    <div class="works_intro__item">
-                        <a class="works_intro__item--img" href="<?php echo $params->get('addLinkToImage')? $item->link : "javascript:void(0)"; ?>" >
+                <div class="realized_slider__item bm_slider_item">
+<!--                    <div class="works_intro__item">-->
+                        <a class="realized_slider__image" href="<?php echo $params->get('addLinkToImage')? $item->link : "javascript:void(0)"; ?>" >
                             <img src="<?php echo htmlspecialchars($item->image); ?>" alt="<?php echo htmlspecialchars($item->title); ?>" class="cubeRandom" />
                         </a>
 
@@ -77,7 +77,7 @@ if(!empty($items)):
                                 <?php echo JText::_('K2_TO_PROJECT'); ?>
                             </a>
                         <?php endif;?>
-                    </div>
+<!--                    </div>-->
                 </div>
                 <!--            </div>-->
             <?php endforeach; ?>
@@ -96,22 +96,16 @@ if(!empty($items)):
                 <?php endif; ?>
             <?php endforeach; ?>
 
-
-
-
-
-
-
-
         </div>
 
-        <div class="bm_slider_button">
-            <div id="bm_slider_prev_<?php echo $module->id;?>" class="bm_slider_prev"> prev </div>
-            <div id="bm_slider_next_<?php echo $module->id;?>" class="bm_slider_next"> next </div>
+        <div class="realized_slider__arrow bm_slider_button">
+            <div id="bm_slider_prev_<?php echo $module->id;?>" class="realized_slider__arrow--prev bm_slider_prev"> prev </div>
+            <div id="bm_slider_next_<?php echo $module->id;?>" class="realized_slider__arrow--next bm_slider_next"> next </div>
         </div>
         <?php if($show_paging): ?>
-            <div class="bm_slider_cycle_pager" id="bm_slider_pager_<?php echo $module->id;?>"></div>
+            <div class="realized_slider__dots bm_slider_cycle_pager" id="bm_slider_pager_<?php echo $module->id;?>"></div>
         <?php endif; ?>
+        <div class="realized_slider__all_projects"><a href="/vykonani-roboty">Усі проекти ></a></div>
     </div>
     <script type="text/javascript" language="javascript">
         if (typeof jQuery != 'undefined') {
