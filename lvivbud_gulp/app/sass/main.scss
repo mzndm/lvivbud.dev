@@ -487,6 +487,7 @@ h4, .h4 {
       justify-content: center;
       height: 4.5em;
     }
+    @include max-screen($iphone6-landscape) {height: 5.5em;}
     &:nth-child(2n-1) {
       display: none;
     }
@@ -626,7 +627,9 @@ h4, .h4 {
 .realized_slider {
   width: 830px;
   margin: 1em auto 12em;
-  //height: 370px;
+  @include ipad(landscape) {width: 740px;}
+  @include ipad(portrait) {width: 500px;}
+  @include max-screen($tablet-portrait) {width: 70%;}
   &__arrow {
     &--prev {
       background: url("../img/arrow.png") center no-repeat;
@@ -659,6 +662,11 @@ h4, .h4 {
     @extend .works_intro__item;
     width: 260px!important;
     margin: 10px;
+    @include ipad(landscape) {width: 230px !important;}
+    @include ipad(portrait) {width: 230px !important;}
+    @include max-screen($tablet-portrait) {width: 220px !important;}
+    @include screen($iphone6-portrait, $iphone6-landscape) {width: 28.7vw !important;}
+    @include max-screen($iphone6-portrait) {width: 52vw !important;}
   }
   &__image {
     @extend .works_intro__item--img;
