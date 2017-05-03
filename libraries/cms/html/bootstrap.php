@@ -226,7 +226,11 @@ abstract class JHtmlBootstrap
 			$debug = (boolean) $config->get('debug');
 		}
 
-		JHtml::_('script', 'jui/bootstrap.min.js', false, true, false, false, $debug);
+        if (JFactory::getApplication()->isAdmin())
+        {
+            JHtml::_('script', 'jui/bootstrap.min.js', false, true, false, false, $debug);
+        }
+		//JHtml::_('script', 'jui/bootstrap.min.js', false, true, false, false, $debug);
 		static::$loaded[__METHOD__] = true;
 
 		return;

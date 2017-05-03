@@ -49,6 +49,7 @@
 .services__item--done {
   @include phone(portrait) {height: 185px;}
   @include iphone5(landscape) {height: 185px;}
+  @include iphone5(portrait) {height: 185px;}
   .services__item--title {
     height: 100%;
 

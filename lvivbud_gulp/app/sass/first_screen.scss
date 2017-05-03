@@ -28,6 +28,7 @@
   @include max-screen($tablet-portrait) { padding-top: 40%; }
   @include phone(landscape) {padding-top: 5%;}
   @include phone(portrait) {padding-top: 5%;}
+  @include max-screen($iphone6-portrait) {padding-top: 5%;}
   @include nexus5x(landscape) {padding-top: 5%;}
   &__wrapper {
 
@@ -61,13 +62,13 @@
   display: inline-block;
   margin: 0;
   float: left;
-  @include phone(portrait) {
+  @include max-screen($iphone6-portrait) {
     width: 50%;
   }
   &--number {
     font-family: 'Open Sans', sans-serif;
     font-size: 3.5em;
-    @include phone() {
+    @include  max-screen($iphone6-portrait) {
       font-size: 2.5em;
     }
     &:before {
@@ -82,7 +83,7 @@
   &--text {
     color: #fff;
     font: italic 1.4em 'OpenSansLight';
-    @include phone() {
+    @include  max-screen($iphone6-portrait) {
       font-size: 1.2em;
     }
   }
