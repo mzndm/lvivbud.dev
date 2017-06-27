@@ -11,13 +11,19 @@
 defined('_JEXEC') or die;
 ?>
 
-<div id="k2ModuleBox<?php echo $module->id; ?>" class="col-md-3 col-sm-4 k2ItemsBlock<?php if($params->get('moduleclass_sfx')) echo ' '.$params->get('moduleclass_sfx'); ?>">
+<div id="k2ModuleBox<?php echo $module->id; ?>" class="service_menu__wrapper col-md-3 col-sm-4  k2ItemsBlock<?php if($params->get('moduleclass_sfx')) echo ' '.$params->get('moduleclass_sfx'); ?>">
 
 	<?php if($params->get('itemPreText')): ?>
 	<p class="modulePretext"><?php echo $params->get('itemPreText'); ?></p>
 	<?php endif; ?>
 
 	<?php if(count($items)): ?>
+	<div class="service_menu__name"><?php echo JText::_('SERVICE_MENU_TITLE'); ?></div>
+	<div class="service_menu__button dropdown-button">
+		<span class="dropdown-button__line dropdown-button__line--1"></span>
+		<span class="dropdown-button__line dropdown-button__line--2"></span>
+		<span class="dropdown-button__line dropdown-button__line--3"></span>
+	</div>
   <div class="service_page service_menu">
     <?php foreach ($items as $key=>$item):	?>
     <div class="service_menu__item <?php echo ($key%2) ? "odd" : "even"; if(count($items)==$key+1) echo ' lastItem'; ?>">

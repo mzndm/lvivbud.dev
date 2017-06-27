@@ -65,6 +65,10 @@
   border: $border;
   border-radius: 5px;
   margin-top: 50px;
+  @include max-screen($tablet-portrait - 1px) {
+    margin-top: 0;
+    margin-bottom: 2em;
+  }
 }
 .service_menu {
   &__item {

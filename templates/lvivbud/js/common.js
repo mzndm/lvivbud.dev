@@ -90,6 +90,13 @@ jQuery(document).ready(function($) {
                      slidesToShow: 3,
                      slidesToScroll: 2
                  }
+             },
+             {
+                 breakpoint: 359,
+                 settings: {
+                     slidesToShow: 2,
+                     slidesToScroll: 2
+                 }
              }
          ]
      });
@@ -119,9 +126,26 @@ jQuery(document).ready(function($) {
 
 //  =====================  end sliders   =================================
 
+
+
+//  =====================  dropdown menu   =================================
+
+    $('.dropdown-button').click(function () {
+        $(this).toggleClass('dropdown-button__close');
+    });
+
+    $('.service_menu__button').click(function(){
+        $('.service_menu').slideToggle();
+    });
+
+
+
+
+
  /*   $('.readmore').click(function() {
         $('.bottom_text_wrapper').toggleClass('show');
     });*/
+
 
 
 

@@ -56,6 +56,9 @@ h2, .h2 {
   @include phone(portrait) {
     margin-top: 35px;
   }
+  @include iphone5(portrait) {
+    font-size: 1.3em;
+  }
 }
 .module_title {
   &:before {
@@ -106,6 +109,10 @@ h4, .h4 {
   margin-left: 3em;
   margin-bottom: 1em;
   @include phone(portrait) {
+    max-width: 100%;
+    margin-left: 0;
+  }
+  @include iphone5(portrait) {
     max-width: 100%;
     margin-left: 0;
   }
@@ -171,6 +178,9 @@ h4, .h4 {
 
   .partners_slider__item {
     outline: none;
+    display: flex;
+    align-items: center;
+    height: 55px;
     @include phone(portrait) {
       margin: 0 10px;
       display: flex;
@@ -191,6 +201,9 @@ h4, .h4 {
     @include phone(portrait) {
       padding: 0 1.5em;
     }
+    @include iphone5(portrait) {
+      padding: 0 1.5em;
+    }
     &--img {
         float: left;
         margin-right: 4em;
@@ -199,6 +212,11 @@ h4, .h4 {
           margin-right: 2em;
        }
       @include phone(portrait) {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 1em;
+      }
+      @include iphone5(portrait) {
         max-width: 100%;
         margin-right: 0;
         margin-bottom: 1em;
@@ -351,6 +369,10 @@ h4, .h4 {
       width: 30%;
     }
     @include phone(portrait) {
+      width: 100%;
+      margin: 0 0 1em;
+    }
+    @include iphone5(portrait) {
       width: 100%;
       margin: 0 0 1em;
     }
@@ -630,18 +652,21 @@ h4, .h4 {
   @include ipad(landscape) {width: 740px;}
   @include ipad(portrait) {width: 500px;}
   @include max-screen($tablet-portrait) {width: 70%;}
+  @include iphone5(portrait) {width: 90%;}
   //@include max-screen($iphone6-portrait) {width: 100%;}
   &__arrow {
     &--prev {
       background: url("../img/arrow.png") center no-repeat;
       left: 7%;
       top: 40%;
+      @include iphone5(portrait) {left: 0;}
     }
     &--next {
       background: url("../img/arrow.png") center no-repeat;
       transform: rotate(180deg);
       right: 7%;
       top: 40%;
+      @include iphone5(portrait) {right: 0;}
     }
   }
   &__dots {
@@ -668,6 +693,7 @@ h4, .h4 {
     @include max-screen($tablet-portrait) {width: 30vw !important;}
     @include screen($nexus-portrait+1px, $iphone6-landscape) {width: 28.7vw !important;}
     @include max-screen($iphone6-portrait) {width: 52vw !important;}
+    @include iphone5(portrait) {width: 67vw !important;}
   }
   &__image {
     @extend .works_intro__item--img;
@@ -723,5 +749,94 @@ h4, .h4 {
   }
   footer {
     border-top: none;
+  }
+}
+
+// ==================  dropdown-menu   ===================================
+.service_menu {
+  @include min-screen($tablet-portrait) {
+    display: block;
+  }
+  @include max-screen($tablet-portrait - 1px) {
+    display: none;
+  }
+  &__wrapper {
+    padding-top: 2em;
+  }
+  &__name {
+    color: #191919;
+    font-size: 1.125em;
+    text-transform: uppercase;
+    font-family: Ubuntu-Bold;
+    margin-bottom: 2em;
+    line-height: 2;
+    @include min-screen($tablet-portrait) {
+      display: none;
+    }
+    @include max-screen($tablet-portrait - 1px) {
+      display: inline-block;
+    }
+  }
+}
+.dropdown {
+  &-button {
+    position: relative;
+    float: right;
+    width: 35px;
+    height: 35px;
+    @include min-screen($tablet-portrait) {
+      display: none;
+    }
+    @include max-screen($tablet-portrait - 1px) {
+      display: block;
+    }
+    &__line {
+      display: block;
+      width: 35px;
+      height: 4px;
+      margin-bottom: 8px;
+      background: #888;
+      transition: all 0.1s ease-in;
+     /* @include screen($nexus5x-portrait, $nexus7-portrait - 1px, portrait) {
+        width: 28px;
+        margin-bottom: 5px;
+      }
+      @include screen(0, $nexus5x-portrait - 1px, portrait) {
+        width: initial;
+        margin-bottom: 5px;
+      }*/
+    }
+    &__close {
+      .dropdown-button {
+        &__line {
+          background: $green;
+          &--1 {
+            transform: rotate(45deg);
+            margin-top: 15px;
+            margin-bottom: 0;
+         /*   @include screen($nexus5x-portrait, $nexus7-portrait - 1px, portrait) {
+              margin-top: 11px;
+            }
+            @include screen(0, $nexus5x-portrait - 1px, portrait) {
+              margin-top: 10px;
+            }*/
+          }
+          &--2 {
+            background-color: transparent;
+          }
+          &--3 {
+            transform: rotate(-45deg);
+            margin-top: -15px;
+            margin-bottom: 0;
+        /*    @include screen($nexus5x-portrait, $nexus7-portrait - 1px, portrait) {
+              margin-top: -13px;
+            }
+            @include screen(0, $nexus5x-portrait - 1px, portrait) {
+              margin-top: -13px;
+            }*/
+          }
+        }
+      }
+    }
   }
 }

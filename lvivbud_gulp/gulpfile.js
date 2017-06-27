@@ -11,7 +11,9 @@ gulp.task ('sass', function() {
 	return gulp.src('app/sass/main.scss')
 		.pipe(sourcemaps.init())
     	.pipe(sass())
-		.pipe(prefixer())
+		.pipe(prefixer({
+			browsers: ['last 8 versions', '>0.01%']
+		}))
 		// .pipe(cssmin())
     	.pipe(sourcemaps.write())
     	.pipe(gulp.dest('../templates/lvivbud/css'));

@@ -22,16 +22,6 @@ $menu   = $app->getMenu();
 $active = $menu->getActive();
 $class  = $active->alias . " pageid-" . $active->id;
 
-// Getting params from template
-//$params = $app->getTemplate(true)->params;
-
-// Detecting Active Variables
-//$option   = $app->input->getCmd('option', '');
-//$view     = $app->input->getCmd('view', '');
-//$layout   = $app->input->getCmd('layout', '');
-//$task     = $app->input->getCmd('task', '');
-//$itemid   = $app->input->getCmd('Itemid', '');
-//$sitename = $app->get('sitename');
 
 ?>
 
@@ -45,22 +35,7 @@ $class  = $active->alias . " pageid-" . $active->id;
 	<!--[if lt IE 9]><script src="<?php echo JUri::root(true); ?>/media/jui/js/html5.js"></script><![endif]-->
 
 
-<!-- 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
- -->
-
 <?php
-
-// Unset JUI Scripts
-
-//unset($doc->_scripts[JURI::root(true) . '/media/system/js/mootools-core.js']);
-//unset($doc->_scripts[JURI::root(true) . '/media/system/js/core.js']);
-//unset($doc->_scripts[JURI::root(true) . '/media/system/js/modal.js']);
-//unset($doc->_scripts[JURI::root(true) . '/media/system/js/caption.js']);
-//unset($doc->_scripts[JURI::root(true) . '/media/jui/js/jquery.min.js']);
-//unset($doc->_scripts[JURI::root(true) . '/media/jui/js/bootstrap.min.js']);
-//unset($doc->_scripts[JURI::root(true) . '/media/jui/js/jquery-noconflict.js']);
-//unset($doc->_scripts[JURI::root(true) . '/media/jui/js/jquery-migrate.min.js']);
 
 
 // Add Stylesheets
@@ -93,17 +68,17 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 
 		<div class="row">
 			<div class="container">
-				<div class="col-sm-2 col-xs-4 header_logo">
+				<div class="col-md-2 col-sm-3 col-xs-4 header_logo">
 					<!-- <jdoc:include type="modules" name="header_logo" style="none" /> -->
 					<a href="/"><img src="/templates/lvivbud/img/logo_header.png"></a>
 				</div>
 
-				<div class="col-sm-10 col-xs-8 header_menu">
+				<div class="col-md-10 col-sm-9 col-xs-8 header_menu">
 
 					<nav class="navbar navbar-default">
 						<div class="container-fluid">
 							<div class="navbar-header">
-								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header_menu" aria-expanded="false">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header_menu" aria-expanded="false" aria-controls="header_menu">
 									<span class="sr-only">Toggle navigation</span>
 									<span class="icon-bar"></span>
 									<span class="icon-bar"></span>
@@ -111,7 +86,7 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/mai
 								</button>
 							</div>
 
-							<div class="collapse navbar-collapse" id="header_menu">
+							<div class="navbar-collapse collapse" id="header_menu">
 								<jdoc:include type="modules" name="header_menu" style="none" />
 							</div>
 						</div>
@@ -215,7 +190,6 @@ $doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/common.j
 //$doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/map.js');
 ?>
 
-<!--	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsYaYJAkTYvpetZz0NmrR4K6ZAk-NjLG4" async defer></script>-->
 
 </body>
 </html>

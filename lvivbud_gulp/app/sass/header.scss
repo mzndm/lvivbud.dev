@@ -7,6 +7,9 @@
 		a {
 			color: #ffffff;
 		}
+		&:nth-of-type(2) {
+			display: none;
+		}
 	}
 	.lang-active {
 		a {
@@ -110,6 +113,10 @@
 			width: 100vw;
 			margin-left: -57%;
 		}
+		@include iphone5(portrait) {
+			width: 100vw;
+			margin-left: -57%;
+		}
 	}
 	.navbar-default {
 		.navbar-nav {
@@ -121,6 +128,10 @@
 			}
 			@include phone(portrait) {
 				width: 100vw;
+			}
+			@include iphone5(portrait) {
+				width: 100vw;
+				//margin-left: -35vw;
 			}
 			.parent {
 				@include phone() {
@@ -146,7 +157,7 @@
                   @include ipad {
                     padding: 20px 5px;
                   }
-                  @include max-screen($tablet-portrait) {
+                  @include max-screen($tablet-portrait - 1px) {
                     padding: 20px 17px;
                   }
 				}
