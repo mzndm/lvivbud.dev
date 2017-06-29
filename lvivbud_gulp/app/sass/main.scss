@@ -761,7 +761,9 @@ h4, .h4 {
     display: none;
   }
   &__wrapper {
-    padding-top: 2em;
+    @include max-screen($tablet-portrait - 1px) {
+      padding-top: 2em;
+    }
   }
   &__name {
     color: #191919;

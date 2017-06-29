@@ -8,7 +8,7 @@
 			color: #ffffff;
 		}
 		&:nth-of-type(2) {
-			display: none;
+			visibility: hidden;
 		}
 	}
 	.lang-active {
@@ -81,7 +81,7 @@
   }
 }
 .header_menu {
-	max-height: 4.3em;
+	//max-height: 4.3em;
 	@include phone(portrait) {padding: 0;}
 	@include max-screen($tablet-portrait) {padding: 0;}
 	.navbar {
@@ -121,7 +121,7 @@
 	.navbar-default {
 		.navbar-nav {
 			@include max-screen($tablet-portrait) {
-				position: absolute;
+				//position: absolute;
 				margin: 0;
 				width:100%;
 				z-index: 2;
