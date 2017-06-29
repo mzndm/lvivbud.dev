@@ -317,7 +317,6 @@ h4, .h4 {
     line-height: 1.733;
     margin-top: -1em;
   }
-
   &__links {
     display: block;
     margin-top: 2em;
@@ -325,6 +324,17 @@ h4, .h4 {
       font-family: Ubuntu-Bold;
       margin-right: 10px;
       line-height: 2em;
+    }
+  }
+  &__phone {
+    @include max-screen($iphone5-portrait) {
+      display: block;
+    }
+  }
+  &__divider {
+
+    @include max-screen($iphone5-portrait) {
+      display: none;
     }
   }
   a {
@@ -420,6 +430,9 @@ h4, .h4 {
     align-items: center;
     justify-content: center;
     @include phone(portrait) {
+      width: 46%;
+    }
+    @include max-screen($iphone6-portrait - 1px) {
       width: 46%;
     }
     &--img {

@@ -42,6 +42,7 @@
     margin:0 auto 1.2em;
     color: #fff;
     @include phone(landscape) {margin-bottom: 0.5em; font-size: 2em}
+    @include iphone5(portrait) {font-size: 1.8em}
   }
 }
 

@@ -220,7 +220,7 @@
 		@include max-screen($tablet-portrait) {
 			width:100%;
 			margin: 0;
-			height: 2em;
+			height: 3em;
 			border-bottom: 1px dotted $grey;
 			&:first-child {
 				border-top: 1px dotted $grey;

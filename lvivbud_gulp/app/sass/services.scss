@@ -84,6 +84,9 @@
     font-size: 1em;
     line-height: 2em;
     padding: 0 1em;
+    @include max-screen($tablet-portrait - 1px) {
+      line-height: 3em;
+    }
     &:hover {
       text-decoration: none;
       color: $green;
