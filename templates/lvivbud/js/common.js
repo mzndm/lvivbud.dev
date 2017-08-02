@@ -138,7 +138,9 @@ jQuery(document).ready(function($) {
         $('.service_menu').slideToggle();
     });
 
-
+    if ($('.navbar-collapse').hasClass('in')) {
+        $('.navbar-collapse').css('height', $('.navbar-collapse').children().outerHeight());
+    }
 
 
 
