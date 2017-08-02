@@ -103,7 +103,7 @@ if(!empty($items)):
         <?php if($show_paging): ?>
             <div class="realized_slider__dots bm_slider_cycle_pager" id="bm_slider_pager_<?php echo $module->id;?>"></div>
         <?php endif; ?>
-        <div class="realized_slider__all_projects"><a href="/vykonani-roboty">Усі проекти ></a></div>
+        <div class="realized_slider__all_projects"><a href="/vykonani-roboty"><?php echo JText::_('OLL_PROJECTS'); ?></a></div>
     </div>
     <script type="text/javascript" language="javascript">
         if (typeof jQuery != 'undefined') {

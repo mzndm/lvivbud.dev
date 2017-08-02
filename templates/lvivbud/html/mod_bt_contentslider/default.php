@@ -153,7 +153,7 @@ if(count($list)>0){?>
 		<!--end bt-main-item page	-->
 		<?php endforeach; ?>
 	</div>
-	<div class="realized_slider__all_projects"><a href="/vykonani-roboty">Усі проекти ></a></div>
+	<div class="realized_slider__all_projects"><a href="/vykonani-roboty"><?php echo JText::_('OLL_PROJECTS'); ?></a></div>
 </div>
 <!--end bt-container -->
 <div style="clear: both;"></div>
